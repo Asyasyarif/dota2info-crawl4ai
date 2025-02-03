@@ -1,1 +1,11 @@
 crawl4ai
+langchain 
+openai 
+pgvector 
+psycopg2
+langchain-openai
+langchain-community
+python-dotenv
+psycopg2-binary
+langgraph
+langchain-postgres
