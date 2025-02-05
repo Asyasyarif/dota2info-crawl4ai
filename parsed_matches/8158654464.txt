@@ -1,0 +1,3429 @@
+players:
+  account_id: 1674673556
+  player_name: sK.busow
+  player_slot: Slot ke 1
+  creeps_stacked: 3
+  camps_stacked: 1
+  rune_pickups: 1
+  firstblood_claimed: 0
+  teamfight_participation: 51.72% teamfight
+  towers_killed: 5
+  roshans_killed: 1
+  observers_placed: 0
+  stuns: 0 kali
+  hero: Phantom Assassin
+  slot_item_0:
+    abilities:
+      type: active
+      title: Chop Tree
+      description: Destroy a target tree.
+      type: passive
+      title: Quell
+      description: Increases attack damage against non-hero units by 10 for melee heroes, and 5 for ranged.
+      type: passive
+      title: Cleave
+      description: Deals 70% of attack damage as physical damage in a cone up to 650 around the target. Deals 40% against creeps. (Melee Only)
+    hint:
+    id: 145
+    img: /apps/dota2/images/dota_react/items/bfury.png?t=1593393829403
+    dname: Battle Fury
+    qual: epic
+    cost: 4100
+    behavior: Unit Target
+    target_team:
+    target_type: Tree
+    notes: Cleave damage goes through spell immunity.
+If multiple sources of Cleave are present, each Cleave's damage is applied separately.
+    attrib:
+      key: bonus_damage
+      display: + {value} Damage
+      value: 65
+      key: bonus_health_regen
+      display: + {value} Health Regeneration
+      value: 7.5
+      key: bonus_mana_regen
+      display: + {value} Mana Regeneration
+      value: 2.75
+      key: cleave_damage_percent
+      value: 70
+      key: cleave_damage_percent_creep
+      value: 40
+      key: quelling_bonus
+      value: 10
+      key: quelling_bonus_ranged
+      value: 5
+      key: cleave_starting_width
+      value: 150
+      key: cleave_ending_width
+      value: 360
+      key: cleave_distance
+      value: 650
+      key: upgraded_cleave_bonus
+      value: 25
+      key: upgraded_damage_bonus
+      value: 15
+    mc: False
+    hc: False
+    cd: 4
+    lore: The bearer of this mighty axe gains the ability to cut down swaths of enemies at once.
+    components:
+      - broadsword
+      - claymore
+      - cornucopia
+      - quelling_blade
+    created: True
+    charges: False
+  slot_item_1:
+    abilities:
+      type: passive
+      title: Bash
+      description: Grants melee heroes a 25% chance on hit to stun the target for 1.2 seconds and deal 100 bonus physical damage. Bash chance for ranged heroes is 10%.
+    hint:
+    id: 143
+    img: /apps/dota2/images/dota_react/items/basher.png?t=1593393829403
+    dname: Skull Basher
+    qual: epic
+    cost: 2875
+    dmg_type: Physical
+    bkbpierce: Yes
+    dispellable: Strong Dispels Only
+    notes: Does not stack with other sources of Bash.
+The following heroes cannot trigger Bash on this item: Spirit Breaker, Faceless Void, Slardar, and Kez while in Sai mode.
+Does not grant Bash to Clones and Tempest Doubles.
+    attrib:
+      key: bonus_damage
+      display: + {value} Damage
+      value: 30
+      key: bonus_strength
+      display: + {value} Strength
+      value: 10
+      key: bash_chance_melee
+      value: 25
+      key: bash_chance_ranged
+      value: 10
+      key: bash_duration
+      value: 1.2
+      key: bash_cooldown
+      value: 2.3
+      key: bonus_chance_damage
+      value: 100
+    mc: False
+    hc: False
+    cd: 2
+    lore: A feared weapon in the right hands, this maul's ability to shatter the defenses of its opponents should not be underestimated.
+    components:
+      - mithril_hammer
+      - belt_of_strength
+    created: True
+    charges: False
+  slot_item_2:
+    abilities:
+      type: passive
+      title: Corrosion
+      description: Dealing 5 damage per second, and slowing movement by 13% if the equipped hero is melee, or by 4% if they are ranged and reduces heals, health regeneration, lifesteal and spell lifesteal by 20% . Affects Buildings
+
+Lasts for 3 seconds.
+    hint:
+    id: 569
+    img: /apps/dota2/images/dota_react/items/orb_of_corrosion.png?t=1593393829403
+    dname: Orb of Corrosion
+    qual: rare
+    cost: 875
+    notes: 
+    attrib:
+      key: armor
+      display: + {value} Armor
+      value: 3
+      key: slow_melee
+      value: 13
+      key: slow_range
+      value: 4
+      key: damage
+      value: 5
+      key: duration
+      value: 3
+      key: attack_speed
+      display: + {value} Attack Speed
+      value: 25
+      key: heal_reduction
+      value: 20
+    mc: False
+    hc: False
+    cd: False
+    lore: Seepage from the wounds of a warrior deity, sealed in an arcanist's orb following a campaign of vicious slaughter.
+    components:
+      - orb_of_venom
+      - ring_of_protection
+      - gloves
+    created: True
+    charges: False
+  slot_item_3:
+    abilities:
+      type: active
+      title: Avatar
+      description: Applies a basic dispel. Grants 60% Magic resistance and immunity to pure and reflected damage. For the duration of the effect, any negative effect from enemy spells has no effect. 
+
+Duration: 9 
+Dispel Type: Basic Dispel
+    hint:
+    id: 116
+    img: /apps/dota2/images/dota_react/items/black_king_bar.png?t=1593393829403
+    dname: Black King Bar
+    qual: epic
+    cost: 4050
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: Purchasing another Black King Bar will not reset its immunity duration.
+Abilities that pierce magic immunity will work fully even when Avatar is activated
+    attrib:
+      key: bonus_strength
+      display: + {value} Strength
+      value: 10
+      key: bonus_damage
+      display: + {value} Damage
+      value: 24
+      key: duration
+      value: 9 / 8 / 7 / 6
+      key: max_level
+      value: 4
+      key: model_scale
+      value: 30
+      key: magic_resist
+      value: 60
+    mc: 50
+    hc: False
+    cd: 95
+    lore: A powerful staff imbued with the strength of giants.
+    components:
+      - ogre_axe
+      - mithril_hammer
+    created: True
+    charges: False
+  slot_item_4:
+    abilities:
+      type: active
+      title: Switch Attribute
+      description: Switches between +10 Strength, +10 Agility, or +10 Intelligence.
+    hint:
+      - Movement speed bonuses from multiple pairs of boots do not stack.
+    id: 63
+    img: /apps/dota2/images/dota_react/items/power_treads.png?t=1593393829403
+    dname: Power Treads
+    qual: common
+    cost: 1400
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: Power Treads can be built using a Belt of Strength, Band of Elvenskin, or a Robe of the Magi.
+    attrib:
+      key: bonus_movement_speed_ranged
+      display: + {value} Move Speed (Ranged Heroes)
+      value: 45
+      key: bonus_movement_speed_melee
+      display: + {value} Move Speed (Melee Heroes)
+      value: 55
+      key: bonus_stat
+      display: + {value} Selected Attribute
+      value: 10
+      key: bonus_attack_speed
+      display: + {value} Attack Speed
+      value: 25
+      key: bonus_damage
+      value: 0
+    mc: False
+    hc: False
+    cd: False
+    lore: A pair of tough-skinned boots that change to meet the demands of the wearer.
+    components:
+      - boots
+      - gloves
+      - belt_of_strength
+    created: True
+    charges: False
+  slot_item_5:
+    abilities:
+      type: passive
+      title: Corruption
+      description: Your attacks reduce the target's armor by -6 for 7 seconds.
+      type: passive
+      title: Soul Stealer
+      description: Desolator gains +2 damage every time an enemy hero dies while affected by Corruption, to a maximum of 30.
+    hint:
+    id: 168
+    img: /apps/dota2/images/dota_react/items/desolator.png?t=1593393829403
+    dname: Desolator
+    qual: artifact
+    cost: 3500
+    bkbpierce: Yes
+    dispellable: Yes
+    notes: Armor reduction works on buildings.
+    attrib:
+      key: bonus_damage
+      display: + {value} Damage
+      value: 50
+      key: corruption_armor
+      value: -6
+      key: corruption_duration
+      value: 7.0
+      key: bonus_damage_per_kill
+      value: 2
+      key: bonus_damage_per_assist
+      value: 1
+      key: max_damage
+      value: 30
+    mc: False
+    hc: False
+    cd: False
+    lore: A wicked weapon, used in torturing political criminals.
+    components:
+      - mithril_hammer
+      - mithril_hammer
+      - blight_stone
+    created: True
+    charges: False
+  item_neutral:
+    abilities:
+    hint:
+      - Also provides one of the following, based on the Vambrace's main attribute:
+      -  Strength: +10% Magic Resistance 
+      -  Agility: +15 Attack Speed 
+      -  Intelligence: +8% Spell Amp
+    id: 331
+    img: /apps/dota2/images/dota_react/items/vambrace.png?t=1593393829403
+    dname: Vambrace
+    qual: common
+    cost: 0
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: 
+    attrib:
+      key: bonus_primary_stat
+      display: + {value} Main Vambrace Attribute
+      value: 10
+      key: bonus_secondary_stat
+      display: + {value} Other Attributes
+      value: 4
+      key: bonus_spell_amp
+      value: 8
+      key: bonus_magic_resistance
+      value: 10
+      key: bonus_attack_speed
+      value: 15
+    mc: False
+    hc: False
+    cd: False
+    lore: The coveted treasure that divided the heirs of Queen Raiya upon her death, resulting in the eventual downfall of her kingdom.
+    components: None
+    created: False
+    charges: False
+    tier: 3
+  backpack_0: None
+  backpack_1: None
+  backpack_2: None
+  kills: 8 kali
+  deaths: 6 kali
+  assists: 7 kali
+  denies: 2 kali
+  last_hits: 263 kali
+  leaver_status: finished match, no abandon
+  gold_per_min: 668
+  xp_per_min: 830
+  level: 21
+  net_worth: 20130
+  aghanims_scepter: No
+  aghanims_shard: Yes
+  moonshard: No
+  hero_damage: 20607
+  tower_damage: 7387
+  hero_healing: 0
+  gold: 1830
+  gold_spent: 18840
+  win: Yes
+  lose: No
+  total_gold: 20886
+  total_xp: 25951
+  kda: Pemain terlibat dalam 2.14 kill atau assist untuk setiap 1 kali mati.
+  abandons: 0
+  neutral_kills: 102
+  tower_kills: 5
+  courier_kills: 0
+  lane_kills: 140
+  hero_kills: 8
+  observer_kills: 0
+  sentry_kills: 1
+  roshan_kills: 1
+  ancient_kills: 31
+  buyback_count: 0
+  observer_uses: 0
+  sentry_uses: 0
+  lane_efficiency: Pemain memiliki efisiensi laning sebesar 0.87%. atau 86%
+  lane: 1
+  lane_role: 1
+  is_roaming: No
+  game_mode: Captain's Mode
+  duration: 1876
+  account_id: 36771694
+  player_name: sK.onenen
+  player_slot: Slot ke 2
+  creeps_stacked: 57
+  camps_stacked: 8
+  rune_pickups: 3
+  firstblood_claimed: 0
+  teamfight_participation: 79.31% teamfight
+  towers_killed: 2
+  roshans_killed: 0
+  observers_placed: 2
+  stuns: 0.26630276 kali
+  hero: Sniper
+  slot_item_0:
+    abilities:
+      type: active
+      title: Inhibit
+      description: Targets an enemy, slowing it for 4 seconds.
+      type: passive
+      title: Manabreak
+      description: Each attack burns 40 mana from the target, and deals 1 physical damage per burned mana. 
+
+Burns 8 mana per attack from melee illusions and 8 mana per attack from ranged illusions.
+    hint:
+    id: 174
+    img: /apps/dota2/images/dota_react/items/diffusal_blade.png?t=1593393829403
+    dname: Diffusal Blade
+    qual: artifact
+    cost: 2500
+    behavior: Unit Target
+    dispellable: Yes
+    target_team: Enemy
+    target_type:
+      - Hero
+      - Basic
+    notes: Does not stack with other diffusal blades.
+    attrib:
+      key: bonus_agility
+      display: + {value} Agility
+      value: 15
+      key: bonus_intellect
+      display: + {value} Intelligence
+      value: 10
+      key: feedback_mana_burn
+      value: 40
+      key: feedback_mana_burn_illusion_melee
+      value: 8
+      key: feedback_mana_burn_illusion_ranged
+      value: 8
+      key: purge_rate
+      value: 5
+      key: purge_root_duration
+      value: 3.0
+      key: purge_slow_duration
+      value: 4.0
+      key: damage_per_burn
+      value: 1
+    mc: 25
+    hc: False
+    cd: 15
+    lore: An enchanted blade that allows the user to cut straight into the enemy's soul.
+    components:
+      - blade_of_alacrity
+      - robe
+    created: True
+    charges: False
+  slot_item_1:
+    abilities:
+      type: active
+      title: Static Charge
+      description: Places a charged shield on a target unit for 15 seconds which has a 20% chance to release a 225 magical damage shocking bolt at a nearby attacker and 4 additional enemies.
+      type: passive
+      title: Chain Lightning
+      description: Grants a 25% chance on attack to release a bolt of electricity that leaps between 12 targets within a 650 radius, dealing 180 magical damage to each. Lightning proc pierces evasion. Deals 150% damage to illusions.
+    hint:
+    id: 158
+    img: /apps/dota2/images/dota_react/items/mjollnir.png?t=1593393829403
+    dname: Mjollnir
+    qual: artifact
+    cost: 5500
+    behavior: Unit Target
+    dispellable: Yes
+    target_team: Friendly
+    target_type:
+      - Hero
+      - Basic
+    notes: Static Charge cannot trigger more than once per second.
+Static Charge's shock deals magical damage centered on hero with the Static Charge. Static Charge's targets cannot be more than 900 range away.
+Static Charge procs will not bounce to heroes that are invisible or hidden by Fog of War.
+    attrib:
+      key: bonus_damage
+      display: + {value} Damage
+      value: 25
+      key: bonus_attack_speed
+      display: + {value} Attack Speed
+      value: 90
+      key: static_duration
+      value: 15.0
+      key: static_chance
+      value: 20
+      key: static_strikes
+      value: 4
+      key: static_damage
+      value: 225
+      key: static_primary_radius
+      value: 600
+      key: static_seconary_radius
+      value: 900
+      key: static_radius
+      value: 900
+      key: static_cooldown
+      value: 1.0
+      key: chain_chance
+      value: 25
+      key: chain_damage
+      value: 180
+      key: chain_strikes
+      value: 12
+      key: chain_radius
+      value: 650
+      key: chain_delay
+      value: 0.25
+      key: chain_cooldown
+      value: 0.2
+      key: max_charges
+      value: 0
+      key: illusion_multiplier_pct
+      value: 150
+    mc: 50
+    hc: False
+    cd: 35
+    lore: Thor's magical hammer, made for him by the dwarves Brok and Eitri.
+    components:
+      - maelstrom
+      - hyperstone
+    created: True
+    charges: False
+  slot_item_2:
+    abilities:
+      type: active
+      title: Unholy Rage
+      description: Increases Lifesteal percentage to 175% for 6 seconds. 
+
+Dispel Type: Basic Dispel
+      type: passive
+      title: Lifesteal
+      description: Heals the attacker for a percentage of attack damage dealt. Lifesteal from creeps is reduced by 40%.
+    hint:
+    id: 156
+    img: /apps/dota2/images/dota_react/items/satanic.png?t=1593393829403
+    dname: Satanic
+    qual: artifact
+    cost: 5050
+    behavior:
+      - Instant Cast
+      - No Target
+    dispellable: No
+    notes: 
+    attrib:
+      key: bonus_strength
+      display: + {value} Strength
+      value: 25
+      key: bonus_damage
+      display: + {value} Damage
+      value: 25
+      key: lifesteal_percent
+      display: + {value}% Lifesteal
+      value: 30
+      key: creep_lifesteal_reduction_pct
+      value: 40
+      key: unholy_lifesteal_percent
+      value: 145
+      key: unholy_lifesteal_total_tooltip
+      value: 175
+      key: unholy_duration
+      value: 6.0
+    mc: False
+    hc: False
+    cd: 30
+    lore: Immense power at the cost of your soul.
+    components:
+      - lifesteal
+      - claymore
+      - reaver
+    created: True
+    charges: False
+  slot_item_3:
+    abilities:
+      type: active
+      title: Switch Attribute
+      description: Switches between +10 Strength, +10 Agility, or +10 Intelligence.
+    hint:
+      - Movement speed bonuses from multiple pairs of boots do not stack.
+    id: 63
+    img: /apps/dota2/images/dota_react/items/power_treads.png?t=1593393829403
+    dname: Power Treads
+    qual: common
+    cost: 1400
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: Power Treads can be built using a Belt of Strength, Band of Elvenskin, or a Robe of the Magi.
+    attrib:
+      key: bonus_movement_speed_ranged
+      display: + {value} Move Speed (Ranged Heroes)
+      value: 45
+      key: bonus_movement_speed_melee
+      display: + {value} Move Speed (Melee Heroes)
+      value: 55
+      key: bonus_stat
+      display: + {value} Selected Attribute
+      value: 10
+      key: bonus_attack_speed
+      display: + {value} Attack Speed
+      value: 25
+      key: bonus_damage
+      value: 0
+    mc: False
+    hc: False
+    cd: False
+    lore: A pair of tough-skinned boots that change to meet the demands of the wearer.
+    components:
+      - boots
+      - gloves
+      - belt_of_strength
+    created: True
+    charges: False
+  slot_item_4:
+    abilities:
+      type: passive
+      title: Pierce
+      description: Grants each attack a 80% chance to pierce through evasion and deal 70 bonus magical damage.
+    hint:
+    id: 135
+    img: /apps/dota2/images/dota_react/items/monkey_king_bar.png?t=1593393829403
+    dname: Monkey King Bar
+    qual: epic
+    cost: 4700
+    notes: 
+    attrib:
+      key: bonus_damage
+      display: + {value} Damage
+      value: 40
+      key: bonus_attack_speed
+      display: + {value} Attack Speed
+      value: 45
+      key: bonus_chance
+      value: 80
+      key: bonus_chance_damage
+      value: 70
+    mc: False
+    hc: False
+    cd: False
+    lore: A powerful staff used by a master warrior.
+    components:
+      - demon_edge
+      - javelin
+      - blitz_knuckles
+    created: True
+    charges: False
+  slot_item_5:
+    abilities:
+      type: passive
+      title: Critical Strike
+      description: Grants each attack a 30% chance to deal 160% damage.
+    hint:
+    id: 149
+    img: /apps/dota2/images/dota_react/items/lesser_crit.png?t=1593393829403
+    dname: Crystalys
+    qual: epic
+    cost: 2000
+    notes: Critical Strike does not work against buildings.
+    attrib:
+      key: bonus_damage
+      display: + {value} Damage
+      value: 32
+      key: crit_chance
+      value: 30
+      key: crit_multiplier
+      value: 160
+      key: tooltip_crit_damage
+      value: 60
+    mc: False
+    hc: False
+    cd: False
+    lore: A blade forged from rare crystals, it seeks weak points in enemy armor.
+    components:
+      - claymore
+      - blades_of_attack
+    created: True
+    charges: False
+  item_neutral:
+    id: 573
+    img: /apps/dota2/images/dota_react/items/elven_tunic.png?t=1593393829403
+    dname: Elven Tunic
+    cost: 0
+    notes: 
+    attrib:
+      key: attack_speed
+      display: + {value} Attack Speed
+      value: 26
+      key: evasion
+      display: + {value}% Evasion
+      value: 16
+      key: movment
+      display: + {value}% Movement Speed
+      value: 7
+    mc: False
+    hc: False
+    cd: False
+    lore: Even simple items of elven make seem imbued with inexplicable efficacy.
+    components: None
+    created: False
+    charges: False
+    tier: 3
+  backpack_0: None
+  backpack_1: None
+  backpack_2:
+    id: 75
+    img: /apps/dota2/images/dota_react/items/wraith_band.png?t=1593393829403
+    dname: Wraith Band
+    qual: common
+    cost: 505
+    notes: 
+    attrib:
+      key: bonus_agility
+      display: + {value} Agility
+      value: 5
+      key: bonus_strength
+      display: + {value} Strength
+      value: 2
+      key: bonus_intellect
+      display: + {value} Intelligence
+      value: 2
+      key: bonus_attack_speed
+      display: + {value} Attack Speed
+      value: 5
+      key: bonus_armor
+      display: + {value} Armor
+      value: 1.75
+    mc: False
+    hc: False
+    cd: False
+    lore: A circlet with faint whispers echoing about it.
+    components:
+      - circlet
+      - slippers
+    created: True
+    charges: False
+  kills: 10 kali
+  deaths: 2 kali
+  assists: 13 kali
+  denies: 1 kali
+  last_hits: 292 kali
+  leaver_status: finished match, no abandon
+  gold_per_min: 745
+  xp_per_min: 1054
+  level: 24
+  net_worth: 23280
+  aghanims_scepter: No
+  aghanims_shard: No
+  moonshard: No
+  hero_damage: 37890
+  tower_damage: 6404
+  hero_healing: 0
+  gold: 1625
+  gold_spent: 22810
+  win: Yes
+  lose: No
+  total_gold: 23293
+  total_xp: 32955
+  kda: Pemain terlibat dalam 7.67 kill atau assist untuk setiap 1 kali mati.
+  abandons: 0
+  neutral_kills: 100
+  tower_kills: 2
+  courier_kills: 1
+  lane_kills: 176
+  hero_kills: 10
+  observer_kills: 0
+  sentry_kills: 1
+  roshan_kills: 0
+  ancient_kills: 11
+  buyback_count: 0
+  observer_uses: 2
+  sentry_uses: 0
+  lane_efficiency: Pemain memiliki efisiensi laning sebesar 0.94%. atau 94%
+  lane: 2
+  lane_role: 2
+  is_roaming: No
+  game_mode: Captain's Mode
+  duration: 1876
+  account_id: 126130434
+  player_name: sK.lotorimri
+  player_slot: Slot ke 3
+  creeps_stacked: 5
+  camps_stacked: 2
+  rune_pickups: 6
+  firstblood_claimed: 0
+  teamfight_participation: 58.62% teamfight
+  towers_killed: 0
+  roshans_killed: 0
+  observers_placed: 6
+  stuns: 46.46724 kali
+  hero: Dark Willow
+  slot_item_0:
+    abilities:
+      type: active
+      title: Glimmer
+      description: After a 0.5 second delay, grants invisibility, 40 movement speed and a magic damage barrier that absorbs up to 300 damage to you or a target allied unit for 5 seconds.
+
+Can be cast while channeling.
+    hint:
+    id: 254
+    img: /apps/dota2/images/dota_react/items/glimmer_cape.png?t=1593393829403
+    dname: Glimmer Cape
+    qual: rare
+    cost: 2150
+    behavior:
+      - Instant Cast
+      - Unit Target
+    dispellable: Yes
+    target_team: Friendly
+    target_type:
+      - Hero
+      - Basic
+    notes: 
+    attrib:
+      key: initial_fade_delay
+      value: 0.5
+      key: secondary_fade_delay
+      value: 0.5
+      key: active_movement_speed
+      value: 40
+      key: duration
+      value: 5
+      key: bonus_magical_armor
+      display: + {value}% Magic Resistance
+      value: 25
+      key: barrier_block
+      value: 300
+    mc: 90
+    hc: False
+    cd: 14
+    lore: The stolen cape of a master illusionist.
+    components:
+      - shadow_amulet
+      - cloak
+    created: True
+    charges: False
+  slot_item_1:
+    abilities:
+      type: active
+      title: Blink
+      description: Teleport to a target point up to 1200 units away. 
+
+Blink Dagger cannot be used for 3 seconds after taking damage from an enemy hero or Roshan.
+    hint:
+    id: 1
+    img: /apps/dota2/images/dota_react/items/blink.png?t=1593393829403
+    dname: Blink Dagger
+    qual: component
+    cost: 2250
+    behavior: Point Target
+    notes: Self-casting will cause you to teleport in the direction of your team's fountain.
+If you used Blink to teleport to a distance over the maximum range, you'll be teleported 4/5 of the maximum range instead.
+    attrib:
+      key: blink_range
+      value: 1200
+      key: blink_damage_cooldown
+      value: 3.0
+      key: blink_range_clamp
+      value: 960
+    mc: False
+    hc: False
+    cd: 15
+    lore: The fabled dagger used by the fastest assassin ever to walk the lands.
+    components: None
+    created: False
+    charges: False
+  slot_item_2:
+    abilities:
+      type: active
+      title: Cyclone
+      description: Sweeps a target unit up into a cyclone, making them invulnerable for 2.5 seconds. Cyclone can only be cast on enemy units or yourself.
+
+Enemy units take 50 magical damage upon landing.
+Dispel Type: Basic Dispel
+    hint:
+    id: 100
+    img: /apps/dota2/images/dota_react/items/cyclone.png?t=1593393829403
+    dname: Eul's Scepter of Divinity
+    qual: rare
+    cost: 2625
+    behavior: Unit Target
+    dispellable: Yes
+    target_team:
+    target_type:
+    notes: You cannot cyclone allies.
+Cyclones cast on yourself go through spell immunity.
+Cyclone can dispel some buffs and debuffs.
+Cyclone duration is unaffected by status resistance.
+    attrib:
+      key: bonus_intellect
+      display: + {value} Intelligence
+      value: 10
+      key: bonus_mana_regen
+      display: + {value} Mana Regeneration
+      value: 2.5
+      key: bonus_movement_speed
+      display: + {value} Movement Speed
+      value: 20
+      key: cyclone_duration
+      value: 2.5
+      key: tooltip_drop_damage
+      value: 50
+    mc: 175
+    hc: False
+    cd: 23
+    lore: A mysterious scepter passed down through the ages, its disruptive winds can be used for good or evil.
+    components:
+      - staff_of_wizardry
+      - void_stone
+      - wind_lace
+    created: True
+    charges: False
+  slot_item_3:
+    abilities:
+      type: passive
+      title: Break
+      description: Whenever you attack a hero or are attacked by any unit, the bonus 14 HP regen is lost and the movement speed bonus is reduced to 40 for 13 seconds.
+    hint:
+      - Movement speed bonuses from multiple pairs of boots do not stack.
+    id: 214
+    img: /apps/dota2/images/dota_react/items/tranquil_boots.png?t=1593393829403
+    dname: Tranquil Boots
+    qual: rare
+    cost: 925
+    notes: 
+    attrib:
+      key: bonus_movement_speed
+      display: + {value} Movement Speed
+      value: 65
+      key: bonus_armor
+      value: 0
+      key: bonus_health_regen
+      display: + {value} Health Regeneration
+      value: 14
+      key: heal_duration
+      value: 20.0
+      key: heal_amount
+      value: 250
+      key: heal_interval
+      value: 0.334
+      key: break_time
+      value: 13
+      key: break_count
+      value: 1
+      key: break_threshold
+      value: 20
+      key: broken_movement_speed
+      value: 40
+    mc: False
+    hc: False
+    cd: 13
+    lore: While they increase the longevity of the wearer, this boot is not particularly reliable.
+    components:
+      - boots
+      - wind_lace
+      - ring_of_regen
+    created: True
+    charges: False
+  slot_item_4:
+    abilities:
+      type: active
+      title: Reveal
+      description: Gives True Sight over a 300 radius revealing wards and units even in Fog of War.
+      type: passive
+      title: True Sight
+      description: Grants the ability to see invisible units and wards to any allied vision within 900 range of its carrier.
+      type: passive
+      title: Everlasting
+      description: Dropped on death, and cannot be destroyed.
+    hint:
+    id: 30
+    img: /apps/dota2/images/dota_react/items/gem.png?t=1593393829403
+    dname: Gem of True Sight
+    qual: component
+    cost: 900
+    behavior:
+      - Point Target
+      - AOE
+    notes: Disabled while on a courier.
+    attrib:
+      key: radius
+      value: 900
+      key: active_radius
+      value: 300
+      key: duration
+      value: 4
+    mc: False
+    hc: False
+    cd: 12
+    lore: Not one thrall creature of the depths,
+Nor spirit bound in drowning's keep,
+Nor Maelrawn the Tentacular,
+Shall rest till seas, gem comes to sleep.
+    components: None
+    created: False
+    charges: False
+  slot_item_5:
+    abilities:
+      type: active
+      title: Energy Charge
+      description: Instantly restores 15 health and mana per charge stored. 
+
+Max 20 charges. Gains a charge whenever a visible enemy within 1200 range uses an ability.
+    hint:
+    id: 36
+    img: /apps/dota2/images/dota_react/items/magic_wand.png?t=1593393829403
+    dname: Magic Wand
+    qual: common
+    cost: 450
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: Gains charges for spells cast by visible enemies in 1200 range.
+Certain abilities and item abilities will not add charges.
+    attrib:
+      key: max_charges
+      value: 20
+      key: charge_radius
+      value: 1200
+      key: bonus_all_stats
+      display: + {value} All Attributes
+      value: 3
+      key: restore_per_charge
+      value: 15
+    mc: False
+    hc: False
+    cd: 15
+    lore: A simple wand used to channel magic energies, it is favored by apprentice wizards and great warlocks alike.
+    components:
+      - magic_stick
+      - branches
+      - branches
+    created: True
+    charges: False
+  item_neutral:
+    abilities:
+      type: passive
+      title: Hound
+      description: Attacking from behind slows enemies by 16% (8% if Ranged) and deals 20 more damage. Slow lasts 2 second(s).
+    hint:
+    id: 946
+    img: /apps/dota2/images/dota_react/items/lance_of_pursuit.png?t=1593393829403
+    dname: Lance of Pursuit
+    cost: 0
+    notes: 
+    attrib:
+      key: bonus_mana
+      display: + {value} Mana
+      value: 200
+      key: bonus_strength
+      value: 0
+      key: slow_duration
+      value: 2
+      key: backstab_damage
+      value: 20
+      key: backstab_angle
+      value: 90
+      key: slow_pct_melee
+      value: 16
+      key: slow_pct_ranged
+      value: 8
+    mc: False
+    hc: False
+    cd: False
+    lore: The gleaming weapon of a tarnished knight haunted by his duties to an unworthy king.
+    components: None
+    created: False
+    charges: False
+    tier: 1
+  backpack_0:
+    abilities:
+      type: use
+      title: Throw Grenade
+      description: Throw a grenade at the target area. Enemies in the area will take 50 damage on impact, and be slowed by -15% and take 15 damage every 1s for 5 seconds. Radius 300.
+    hint:
+    id: 1123
+    img: /apps/dota2/images/dota_react/items/blood_grenade.png?t=1593393829403
+    dname: Blood Grenade
+    qual: consumable
+    cost: 50
+    behavior:
+      - Point Target
+      - AOE
+    target_team: Enemy
+    target_type:
+      - Hero
+      - Basic
+    notes: 
+    attrib:
+      key: speed
+      value: 1100
+      key: radius
+      value: 300
+      key: movespeed_slow
+      value: -15
+      key: bonus_health
+      display: + {value} Health
+      value: 50
+      key: damage_over_time
+      value: 15
+      key: impact_damage
+      value: 50
+      key: tick_rate
+      value: 1
+      key: debuff_duration
+      value: 5
+    mc: False
+    hc: 75
+    cd: 10
+    lore: 
+    components: None
+    created: False
+    charges: 1
+  backpack_1: None
+  backpack_2: None
+  kills: 5 kali
+  deaths: 4 kali
+  assists: 12 kali
+  denies: 1 kali
+  last_hits: 43 kali
+  leaver_status: finished match, no abandon
+  gold_per_min: 345
+  xp_per_min: 496
+  level: 16
+  net_worth: 10213
+  aghanims_scepter: No
+  aghanims_shard: No
+  moonshard: No
+  hero_damage: 8759
+  tower_damage: 833
+  hero_healing: 0
+  gold: 863
+  gold_spent: 9915
+  win: Yes
+  lose: No
+  total_gold: 10787
+  total_xp: 15508
+  kda: Pemain terlibat dalam 3.40 kill atau assist untuk setiap 1 kali mati.
+  abandons: 0
+  neutral_kills: 5
+  tower_kills: 0
+  courier_kills: 2
+  lane_kills: 30
+  hero_kills: 5
+  observer_kills: 3
+  sentry_kills: 3
+  roshan_kills: 0
+  ancient_kills: 1
+  buyback_count: 0
+  observer_uses: 6
+  sentry_uses: 1
+  lane_efficiency: Pemain memiliki efisiensi laning sebesar 0.37%. atau 37%
+  lane: 3
+  lane_role: 3
+  is_roaming: No
+  game_mode: Captain's Mode
+  duration: 1876
+  account_id: 264869776
+  player_name: sK.yacathem
+  player_slot: Slot ke 4
+  creeps_stacked: 6
+  camps_stacked: 2
+  rune_pickups: 13
+  firstblood_claimed: 0
+  teamfight_participation: 51.72% teamfight
+  towers_killed: 0
+  roshans_killed: 0
+  observers_placed: 6
+  stuns: 32.70034 kali
+  hero: Clockwerk
+  slot_item_0:
+    id: 279
+    img: /apps/dota2/images/dota_react/items/ring_of_tarrasque.png?t=1593393829403
+    dname: Ring of Tarrasque
+    qual: component
+    cost: 1800
+    notes: 
+    attrib:
+      key: bonus_health_regen
+      display: + {value} Health Regeneration
+      value: 12
+    mc: False
+    hc: False
+    cd: False
+    lore: An ageless ring forged with an otherwise simple blood magic amplified by the presumed source of its key component.
+    components: None
+    created: False
+    charges: False
+  slot_item_1:
+    abilities:
+      type: active
+      title: Cyclone
+      description: Sweeps a target unit up into a cyclone, making them invulnerable for 2.5 seconds. Cyclone can only be cast on enemy units or yourself.
+
+Enemy units take 50 magical damage upon landing.
+Dispel Type: Basic Dispel
+    hint:
+    id: 100
+    img: /apps/dota2/images/dota_react/items/cyclone.png?t=1593393829403
+    dname: Eul's Scepter of Divinity
+    qual: rare
+    cost: 2625
+    behavior: Unit Target
+    dispellable: Yes
+    target_team:
+    target_type:
+    notes: You cannot cyclone allies.
+Cyclones cast on yourself go through spell immunity.
+Cyclone can dispel some buffs and debuffs.
+Cyclone duration is unaffected by status resistance.
+    attrib:
+      key: bonus_intellect
+      display: + {value} Intelligence
+      value: 10
+      key: bonus_mana_regen
+      display: + {value} Mana Regeneration
+      value: 2.5
+      key: bonus_movement_speed
+      display: + {value} Movement Speed
+      value: 20
+      key: cyclone_duration
+      value: 2.5
+      key: tooltip_drop_damage
+      value: 50
+    mc: 175
+    hc: False
+    cd: 23
+    lore: A mysterious scepter passed down through the ages, its disruptive winds can be used for good or evil.
+    components:
+      - staff_of_wizardry
+      - void_stone
+      - wind_lace
+    created: True
+    charges: False
+  slot_item_2:
+    abilities:
+      type: passive
+      title: Break
+      description: Whenever you attack a hero or are attacked by any unit, the bonus 14 HP regen is lost and the movement speed bonus is reduced to 40 for 13 seconds.
+    hint:
+      - Movement speed bonuses from multiple pairs of boots do not stack.
+    id: 214
+    img: /apps/dota2/images/dota_react/items/tranquil_boots.png?t=1593393829403
+    dname: Tranquil Boots
+    qual: rare
+    cost: 925
+    notes: 
+    attrib:
+      key: bonus_movement_speed
+      display: + {value} Movement Speed
+      value: 65
+      key: bonus_armor
+      value: 0
+      key: bonus_health_regen
+      display: + {value} Health Regeneration
+      value: 14
+      key: heal_duration
+      value: 20.0
+      key: heal_amount
+      value: 250
+      key: heal_interval
+      value: 0.334
+      key: break_time
+      value: 13
+      key: break_count
+      value: 1
+      key: break_threshold
+      value: 20
+      key: broken_movement_speed
+      value: 40
+    mc: False
+    hc: False
+    cd: 13
+    lore: While they increase the longevity of the wearer, this boot is not particularly reliable.
+    components:
+      - boots
+      - wind_lace
+      - ring_of_regen
+    created: True
+    charges: False
+  slot_item_3:
+    abilities:
+      type: use
+      title: Reveal
+      description: For 12 seconds, creates an area that reveals and slows invisible heroes by -20% in a 1050 radius where the caster was standing. Invisible units revealed by dust take 25 damage.
+
+ The debuff effect on enemies lingers for 8s after leaving the area of effect.
+    hint:
+    id: 40
+    img: /apps/dota2/images/dota_react/items/dust.png?t=1593393829403
+    dname: Dust of Appearance
+    qual: consumable
+    cost: 80
+    behavior:
+      - Instant Cast
+      - No Target
+    dispellable: Yes
+    notes: Places a debuff on enemy units in the area that reveals them when they are invisible.
+    attrib:
+      key: duration
+      value: 12
+      key: radius
+      value: 1050
+      key: movespeed
+      value: -20
+      key: damage
+      value: 25
+      key: linger_duration
+      value: 8
+    mc: False
+    hc: False
+    cd: 30
+    lore: One may hide visage, but never volume.
+    components: None
+    created: False
+    charges: 1
+  slot_item_4:
+    id: 73
+    img: /apps/dota2/images/dota_react/items/bracer.png?t=1593393829403
+    dname: Bracer
+    qual: common
+    cost: 505
+    notes: 
+    attrib:
+      key: bonus_strength
+      display: + {value} Strength
+      value: 5
+      key: bonus_agility
+      display: + {value} Agility
+      value: 2
+      key: bonus_intellect
+      display: + {value} Intelligence
+      value: 2
+      key: bonus_damage
+      value: 0
+      key: bonus_health_regen
+      display: + {value} Health Regeneration
+      value: 0.75
+      key: bonus_health
+      display: + {value} Health
+      value: 50
+    mc: False
+    hc: False
+    cd: False
+    lore: The bracer is a common choice to toughen up defenses and increase longevity.
+    components:
+      - circlet
+      - gauntlets
+    created: True
+    charges: False
+  slot_item_5:
+    abilities:
+      type: active
+      title: Energy Charge
+      description: Instantly restores 15 health and mana per charge stored.
+
+ Max 10 charges. Gains a charge whenever a visible enemy within 1200 range uses an ability.
+    hint:
+    id: 34
+    img: /apps/dota2/images/dota_react/items/magic_stick.png?t=1593393829403
+    dname: Magic Stick
+    qual: component
+    cost: 200
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: Gains charges for spells cast by visible enemies in 1200 range.
+Certain abilities and item abilities will not add charges.
+    attrib:
+      key: max_charges
+      value: 10
+      key: charge_radius
+      value: 1200
+      key: restore_per_charge
+      value: 15
+    mc: False
+    hc: False
+    cd: 17
+    lore: A simple wand used to channel magic energies, it is favored by apprentice wizards and great warlocks alike.
+    components: None
+    created: False
+    charges: False
+  item_neutral:
+    abilities:
+      type: passive
+      title: Ceremonial Aura
+      description: Lowers enemy Status Resistance by 10% and Magic Resistance by 10%.
+
+Radius: 1200
+    hint:
+    id: 676
+    img: /apps/dota2/images/dota_react/items/ceremonial_robe.png?t=1593393829403
+    dname: Ceremonial Robe
+    cost: 0
+    notes: 
+    attrib:
+      key: bonus_mana
+      display: + {value} Mana
+      value: 300
+      key: aura_radius
+      value: 1200
+      key: status_resistance
+      value: 10
+      key: magic_resistance
+      value: 10
+    mc: False
+    hc: False
+    cd: False
+    lore: One of many items lost in the looting of Zelenwyr's sacred reliquary.
+    components: None
+    created: False
+    charges: False
+    tier: 3
+  backpack_0:
+    abilities:
+      type: use
+      title: Eat Lotus
+      description: Instantly restores 400 health and mana.
+    hint:
+    id: 4205
+    img: /apps/dota2/images/dota_react/items/great_famango.png?t=1593393829403
+    dname: Great Healing Lotus
+    qual: consumable
+    cost: 0
+    behavior:
+      - Instant Cast
+      - No Target
+    target_team: Friendly
+    target_type: Hero
+    notes: Hold Control to use on a nearby allied hero.
+    attrib:
+      key: replenish_amount
+      value: 400
+    mc: False
+    hc: False
+    cd: 5
+    lore: 
+    components:
+      - famango
+      - famango
+      - famango
+    created: True
+    charges: 1
+  backpack_1:
+    id: 89
+    img: /apps/dota2/images/dota_react/items/recipe.png?t=1593393829403
+    dname: Pipe of Insight Recipe
+    cost: 700
+    behavior: False
+    notes: 
+    attrib:
+    mc: False
+    hc: False
+    cd: False
+    lore: 
+    components: None
+    created: False
+    charges: False
+  backpack_2: None
+  kills: 1 kali
+  deaths: 7 kali
+  assists: 15 kali
+  denies: 1 kali
+  last_hits: 85 kali
+  leaver_status: finished match, no abandon
+  gold_per_min: 360
+  xp_per_min: 478
+  level: 16
+  net_worth: 9756
+  aghanims_scepter: No
+  aghanims_shard: Yes
+  moonshard: No
+  hero_damage: 8650
+  tower_damage: 16
+  hero_healing: 0
+  gold: 1421
+  gold_spent: 9465
+  win: Yes
+  lose: No
+  total_gold: 11256
+  total_xp: 14945
+  kda: Pemain terlibat dalam 2.00 kill atau assist untuk setiap 1 kali mati.
+  abandons: 0
+  neutral_kills: 40
+  tower_kills: 0
+  courier_kills: 0
+  lane_kills: 37
+  hero_kills: 1
+  observer_kills: 2
+  sentry_kills: 0
+  roshan_kills: 0
+  ancient_kills: 0
+  buyback_count: 0
+  observer_uses: 3
+  sentry_uses: 1
+  lane_efficiency: Pemain memiliki efisiensi laning sebesar 0.32%. atau 31%
+  lane: 1
+  lane_role: 1
+  is_roaming: No
+  game_mode: Captain's Mode
+  duration: 1876
+  account_id: 120231412
+  player_name: sK.itras
+  player_slot: Slot ke 5
+  creeps_stacked: 0
+  camps_stacked: 0
+  rune_pickups: 4
+  firstblood_claimed: 0
+  teamfight_participation: 72.41% teamfight
+  towers_killed: 1
+  roshans_killed: 0
+  observers_placed: 0
+  stuns: 18.766325 kali
+  hero: Doom
+  slot_item_0:
+    abilities:
+      type: active
+      title: Phase
+      description: Gives 20% increased movement speed on melee heroes, and 10% on ranged heroes, and lets you move through units and turn more quickly for 3 seconds.
+    hint:
+      - Movement speed bonuses from multiple pairs of boots do not stack.
+    id: 50
+    img: /apps/dota2/images/dota_react/items/phase_boots.png?t=1593393829403
+    dname: Phase Boots
+    qual: common
+    cost: 1500
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: 
+    attrib:
+      key: bonus_movement_speed
+      display: + {value} Movement Speed
+      value: 50
+      key: bonus_damage_melee
+      display: + {value} Damage (MELEE)
+      value: 18
+      key: bonus_damage_range
+      display: + {value} Damage (RANGED)
+      value: 12
+      key: damage_block_melee
+      value: 0
+      key: damage_block_ranged
+      value: 0
+      key: block_chance
+      value: 0
+      key: phase_movement_speed
+      value: 20
+      key: phase_movement_speed_range
+      value: 10
+      key: phase_duration
+      value: 3.0
+      key: bonus_attack_speed
+      value: 0
+      key: bonus_armor
+      display: + {value} Armor
+      value: 4
+    mc: False
+    hc: False
+    cd: 8
+    lore: Boots that allow the wearer to travel between the ether.
+    components:
+      - boots
+      - chainmail
+      - blades_of_attack
+    created: True
+    charges: False
+  slot_item_1:
+    abilities:
+      type: active
+      title: Blink
+      description: Teleport to a target point up to 1200 units away. 
+
+Blink Dagger cannot be used for 3 seconds after taking damage from an enemy hero or Roshan.
+    hint:
+    id: 1
+    img: /apps/dota2/images/dota_react/items/blink.png?t=1593393829403
+    dname: Blink Dagger
+    qual: component
+    cost: 2250
+    behavior: Point Target
+    notes: Self-casting will cause you to teleport in the direction of your team's fountain.
+If you used Blink to teleport to a distance over the maximum range, you'll be teleported 4/5 of the maximum range instead.
+    attrib:
+      key: blink_range
+      value: 1200
+      key: blink_damage_cooldown
+      value: 3.0
+      key: blink_range_clamp
+      value: 960
+    mc: False
+    hc: False
+    cd: 15
+    lore: The fabled dagger used by the fastest assassin ever to walk the lands.
+    components: None
+    created: False
+    charges: False
+  slot_item_2:
+    abilities:
+      type: active
+      title: Avatar
+      description: Applies a basic dispel. Grants 60% Magic resistance and immunity to pure and reflected damage. For the duration of the effect, any negative effect from enemy spells has no effect. 
+
+Duration: 9 
+Dispel Type: Basic Dispel
+    hint:
+    id: 116
+    img: /apps/dota2/images/dota_react/items/black_king_bar.png?t=1593393829403
+    dname: Black King Bar
+    qual: epic
+    cost: 4050
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: Purchasing another Black King Bar will not reset its immunity duration.
+Abilities that pierce magic immunity will work fully even when Avatar is activated
+    attrib:
+      key: bonus_strength
+      display: + {value} Strength
+      value: 10
+      key: bonus_damage
+      display: + {value} Damage
+      value: 24
+      key: duration
+      value: 9 / 8 / 7 / 6
+      key: max_level
+      value: 4
+      key: model_scale
+      value: 30
+      key: magic_resist
+      value: 60
+    mc: 50
+    hc: False
+    cd: 95
+    lore: A powerful staff imbued with the strength of giants.
+    components:
+      - ogre_axe
+      - mithril_hammer
+    created: True
+    charges: False
+  slot_item_3:
+    abilities:
+      type: active
+      title: Endurance
+      description: Consumes a charge and gives +45 attack speed and +13% movement speed to nearby allies for 6 seconds. 
+
+Comes with 8 charges.
+
+Radius: 1200
+      type: passive
+      title: Swiftness Aura
+      description: Grants 20 movement speed to allies. 
+
+Radius: 1200
+    hint:
+    id: 185
+    img: /apps/dota2/images/dota_react/items/ancient_janggo.png?t=1593393829403
+    dname: Drum of Endurance
+    qual: rare
+    cost: 1650
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: 
+    attrib:
+      key: aura_movement_speed
+      value: 20
+      key: bonus_str
+      display: + {value} Strength
+      value: 7
+      key: bonus_int
+      display: + {value} Intelligence
+      value: 7
+      key: bonus_attack_speed_pct
+      value: 45
+      key: bonus_movement_speed_pct
+      value: 13
+      key: duration
+      value: 6
+      key: radius
+      value: 1200
+      key: charges_tooltip
+      value: 8
+    mc: False
+    hc: False
+    cd: 30
+    lore: A relic that enchants the bodies of those around it for swifter movement in times of crisis.
+    components:
+      - belt_of_strength
+      - robe
+      - wind_lace
+    created: True
+    charges: 8
+  slot_item_4: None
+  slot_item_5:
+    abilities:
+      type: active
+      title: Arctic Blast
+      description: Emits a freezing wave that causes enemies to take 15% more damage from spells for 16 seconds, deals 200 magical damage and slows their movement by -40% for 4 seconds. Deals 150% damage to illusions.
+
+Radius: 900
+      type: passive
+      title: Freezing Aura
+      description: Reduces the attack speed of all enemies by -45 and all heals, regeneration and lifesteal by 25%. 
+
+Radius: 1200
+    hint:
+    id: 119
+    img: /apps/dota2/images/dota_react/items/shivas_guard.png?t=1593393829403
+    dname: Shiva's Guard
+    qual: epic
+    cost: 5175
+    behavior:
+      - Instant Cast
+      - No Target
+    dispellable: Yes
+    notes: The wave extends at a speed of 400 to a max size of 900.
+The Arctic Blast follows its caster.
+Multiple instances of Freezing Aura do not stack.
+    attrib:
+      key: bonus_intellect
+      display: + {value} Intelligence
+      value: 5
+      key: bonus_strength
+      display: + {value} Strength
+      value: 5
+      key: bonus_agility
+      display: + {value} Agility
+      value: 5
+      key: bonus_hp_regen
+      display: + {value} Health Regeneration
+      value: 5
+      key: bonus_armor
+      display: + {value} Armor
+      value: 15
+      key: aura_radius
+      value: 1200
+      key: aura_attack_speed
+      value: -45
+      key: blast_damage
+      value: 200
+      key: blast_movement_speed
+      value: -40
+      key: blast_debuff_duration
+      value: 4.0
+      key: blast_radius
+      value: 900
+      key: blast_speed
+      value: 400
+      key: hp_regen_degen_aura
+      value: 25
+      key: illusion_multiplier_pct
+      value: 150
+      key: spell_amp
+      value: 15
+      key: resist_debuff_duration
+      value: 16.0
+    mc: 75
+    hc: False
+    cd: 27
+    lore: Said to have belonged to a goddess, today it retains much of its former power.
+    components:
+      - veil_of_discord
+      - platemail
+    created: True
+    charges: False
+  item_neutral:
+    id: 1167
+    img: /apps/dota2/images/dota_react/items/light_collector.png?t=1593393829403
+    dname: Light Collector
+    cost: 0
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: 
+    attrib:
+      key: health_regen
+      value: 10
+      key: mana_regen
+      value: 6
+      key: penalty
+      value: 75
+      key: movespeed_pct
+      value: 5
+      key: radius
+      value: 200
+      key: tree_destruction_radius
+      value: 325
+      key: miss_rate
+      value: 30
+      key: duration
+      value: 2.5
+    mc: False
+    hc: False
+    cd: 30
+    lore: 
+    components: None
+    created: False
+    charges: False
+    tier: 2
+  backpack_0: None
+  backpack_1: None
+  backpack_2: None
+  kills: 5 kali
+  deaths: 3 kali
+  assists: 16 kali
+  denies: 0 kali
+  last_hits: 204 kali
+  leaver_status: finished match, no abandon
+  gold_per_min: 638
+  xp_per_min: 831
+  level: 22
+  net_worth: 19168
+  aghanims_scepter: No
+  aghanims_shard: No
+  moonshard: No
+  hero_damage: 9295
+  tower_damage: 1818
+  hero_healing: 0
+  gold: 3843
+  gold_spent: 16370
+  win: Yes
+  lose: No
+  total_gold: 19948
+  total_xp: 25982
+  kda: Pemain terlibat dalam 5.25 kill atau assist untuk setiap 1 kali mati.
+  abandons: 0
+  neutral_kills: 79
+  tower_kills: 1
+  courier_kills: 0
+  lane_kills: 117
+  hero_kills: 5
+  observer_kills: 0
+  sentry_kills: 0
+  roshan_kills: 0
+  ancient_kills: 0
+  buyback_count: 0
+  observer_uses: 0
+  sentry_uses: 0
+  lane_efficiency: Pemain memiliki efisiensi laning sebesar 1.02%. atau 102%
+  lane: 3
+  lane_role: 3
+  is_roaming: No
+  game_mode: Captain's Mode
+  duration: 1876
+  account_id: 307624442
+  player_name: CS.Lemy
+  player_slot: Slot ke 129
+  creeps_stacked: 9
+  camps_stacked: 3
+  rune_pickups: 3
+  firstblood_claimed: 0
+  teamfight_participation: 31.82% teamfight
+  towers_killed: 0
+  roshans_killed: 0
+  observers_placed: 0
+  stuns: 0 kali
+  hero: Templar Assassin
+  slot_item_0:
+    abilities:
+      type: active
+      title: Switch Attribute
+      description: Switches between +10 Strength, +10 Agility, or +10 Intelligence.
+    hint:
+      - Movement speed bonuses from multiple pairs of boots do not stack.
+    id: 63
+    img: /apps/dota2/images/dota_react/items/power_treads.png?t=1593393829403
+    dname: Power Treads
+    qual: common
+    cost: 1400
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: Power Treads can be built using a Belt of Strength, Band of Elvenskin, or a Robe of the Magi.
+    attrib:
+      key: bonus_movement_speed_ranged
+      display: + {value} Move Speed (Ranged Heroes)
+      value: 45
+      key: bonus_movement_speed_melee
+      display: + {value} Move Speed (Melee Heroes)
+      value: 55
+      key: bonus_stat
+      display: + {value} Selected Attribute
+      value: 10
+      key: bonus_attack_speed
+      display: + {value} Attack Speed
+      value: 25
+      key: bonus_damage
+      value: 0
+    mc: False
+    hc: False
+    cd: False
+    lore: A pair of tough-skinned boots that change to meet the demands of the wearer.
+    components:
+      - boots
+      - gloves
+      - belt_of_strength
+    created: True
+    charges: False
+  slot_item_1:
+    abilities:
+      type: active
+      title: Hurricane Thrust
+      description: Pushes you and target enemy 450 units away from each other, and for 6 seconds, allows you to make 5 attacks against the target without range restrictions and with +100 attack speed.
+
+Can be cast on self or allies to push the target 600 units in the direction it is facing.
+Enemy Range: 450
+      type: passive
+      title: Dragon's Reach
+      description: Increases attack range of ranged heroes.
+    hint:
+    id: 263
+    img: /apps/dota2/images/dota_react/items/hurricane_pike.png?t=1593393829403
+    dname: Hurricane Pike
+    qual: epic
+    cost: 4450
+    behavior: Unit Target
+    target_team: Both
+    target_type:
+      - Hero
+      - Basic
+    notes: Self-cast will use Hurricane Pike on yourself.
+Hurricane Pike doesn't interrupt the target's actions.
+Will not work on a unit inside Chronosphere, Duel, or Black Hole.
+    attrib:
+      key: bonus_intellect
+      display: + {value} Intelligence
+      value: 15
+      key: bonus_health
+      display: + {value} Health
+      value: 200
+      key: bonus_agility
+      display: + {value} Agility
+      value: 20
+      key: bonus_strength
+      display: + {value} Strength
+      value: 15
+      key: base_attack_range
+      display: + {value} Attack Range (Ranged Only)
+      value: 150
+      key: push_length
+      value: 600
+      key: enemy_length
+      value: 450
+      key: range_duration
+      value: 6
+      key: cast_range_enemy
+      value: 450
+      key: max_attacks
+      value: 5
+      key: bonus_attack_speed
+      value: 100
+      key: push_time
+      value: 0.5
+      key: dizzy_duration
+      value: 0
+      key: dizzy_distance_pct
+      value: 0
+    mc: 150
+    hc: False
+    cd: 19
+    lore: A legendary pike once held as royal sigil of the ancient wyvern riders.
+    components:
+      - force_staff
+      - dragon_lance
+    created: True
+    charges: False
+  slot_item_2:
+    abilities:
+      type: active
+      title: Blink
+      description: Teleport to a target point up to 1200 units away. 
+
+Blink Dagger cannot be used for 3 seconds after taking damage from an enemy hero or Roshan.
+    hint:
+    id: 1
+    img: /apps/dota2/images/dota_react/items/blink.png?t=1593393829403
+    dname: Blink Dagger
+    qual: component
+    cost: 2250
+    behavior: Point Target
+    notes: Self-casting will cause you to teleport in the direction of your team's fountain.
+If you used Blink to teleport to a distance over the maximum range, you'll be teleported 4/5 of the maximum range instead.
+    attrib:
+      key: blink_range
+      value: 1200
+      key: blink_damage_cooldown
+      value: 3.0
+      key: blink_range_clamp
+      value: 960
+    mc: False
+    hc: False
+    cd: 15
+    lore: The fabled dagger used by the fastest assassin ever to walk the lands.
+    components: None
+    created: False
+    charges: False
+  slot_item_3:
+    abilities:
+      type: passive
+      title: Critical Strike
+      description: Grants each attack a 30% chance to deal 160% damage.
+    hint:
+    id: 149
+    img: /apps/dota2/images/dota_react/items/lesser_crit.png?t=1593393829403
+    dname: Crystalys
+    qual: epic
+    cost: 2000
+    notes: Critical Strike does not work against buildings.
+    attrib:
+      key: bonus_damage
+      display: + {value} Damage
+      value: 32
+      key: crit_chance
+      value: 30
+      key: crit_multiplier
+      value: 160
+      key: tooltip_crit_damage
+      value: 60
+    mc: False
+    hc: False
+    cd: False
+    lore: A blade forged from rare crystals, it seeks weak points in enemy armor.
+    components:
+      - claymore
+      - blades_of_attack
+    created: True
+    charges: False
+  slot_item_4:
+    abilities:
+      type: active
+      title: Energy Charge
+      description: Instantly restores 15 health and mana per charge stored. 
+
+Max 20 charges. Gains a charge whenever a visible enemy within 1200 range uses an ability.
+    hint:
+    id: 36
+    img: /apps/dota2/images/dota_react/items/magic_wand.png?t=1593393829403
+    dname: Magic Wand
+    qual: common
+    cost: 450
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: Gains charges for spells cast by visible enemies in 1200 range.
+Certain abilities and item abilities will not add charges.
+    attrib:
+      key: max_charges
+      value: 20
+      key: charge_radius
+      value: 1200
+      key: bonus_all_stats
+      display: + {value} All Attributes
+      value: 3
+      key: restore_per_charge
+      value: 15
+    mc: False
+    hc: False
+    cd: 15
+    lore: A simple wand used to channel magic energies, it is favored by apprentice wizards and great warlocks alike.
+    components:
+      - magic_stick
+      - branches
+      - branches
+    created: True
+    charges: False
+  slot_item_5:
+    abilities:
+      type: passive
+      title: Corruption
+      description: Your attacks reduce the target's armor by -6 for 7 seconds.
+      type: passive
+      title: Soul Stealer
+      description: Desolator gains +2 damage every time an enemy hero dies while affected by Corruption, to a maximum of 30.
+    hint:
+    id: 168
+    img: /apps/dota2/images/dota_react/items/desolator.png?t=1593393829403
+    dname: Desolator
+    qual: artifact
+    cost: 3500
+    bkbpierce: Yes
+    dispellable: Yes
+    notes: Armor reduction works on buildings.
+    attrib:
+      key: bonus_damage
+      display: + {value} Damage
+      value: 50
+      key: corruption_armor
+      value: -6
+      key: corruption_duration
+      value: 7.0
+      key: bonus_damage_per_kill
+      value: 2
+      key: bonus_damage_per_assist
+      value: 1
+      key: max_damage
+      value: 30
+    mc: False
+    hc: False
+    cd: False
+    lore: A wicked weapon, used in torturing political criminals.
+    components:
+      - mithril_hammer
+      - mithril_hammer
+      - blight_stone
+    created: True
+    charges: False
+  item_neutral:
+    abilities:
+      type: passive
+      title: Certain Strike
+      description: Empowers your next attack with 250 bonus magical damage and True Strike. Ranged Attackers have +350 bonus range for the attack.
+    hint:
+    id: 361
+    img: /apps/dota2/images/dota_react/items/enchanted_quiver.png?t=1593393829403
+    dname: Enchanted Quiver
+    cost: 0
+    notes: 
+    attrib:
+      key: bonus_attack_range
+      display: + {value} Attack Range (Ranged Only)
+      value: 75
+      key: bonus_damage
+      value: 250
+      key: active_bonus_attack_range
+      value: 350
+    mc: False
+    hc: False
+    cd: 4
+    lore: A graceful gift blessed by the goddess of the hunt.
+    components: None
+    created: False
+    charges: False
+    tier: 3
+  backpack_0: None
+  backpack_1: None
+  backpack_2: None
+  kills: 2 kali
+  deaths: 6 kali
+  assists: 5 kali
+  denies: 0 kali
+  last_hits: 293 kali
+  leaver_status: player DC, no abandon
+  gold_per_min: 547
+  xp_per_min: 826
+  level: 21
+  net_worth: 15749
+  aghanims_scepter: No
+  aghanims_shard: Yes
+  moonshard: No
+  hero_damage: 10558
+  tower_damage: 0
+  hero_healing: 0
+  gold: 299
+  gold_spent: 16495
+  win: Yes
+  lose: No
+  total_gold: 17102
+  total_xp: 25826
+  kda: Pemain terlibat dalam 1.00 kill atau assist untuk setiap 1 kali mati.
+  abandons: 0
+  neutral_kills: 198
+  tower_kills: 0
+  courier_kills: 0
+  lane_kills: 80
+  hero_kills: 2
+  observer_kills: 0
+  sentry_kills: 0
+  roshan_kills: 0
+  ancient_kills: 78
+  buyback_count: 0
+  observer_uses: 0
+  sentry_uses: 0
+  lane_efficiency: Pemain memiliki efisiensi laning sebesar 0.77%. atau 76%
+  lane: 3
+  lane_role: 1
+  is_roaming: No
+  game_mode: Captain's Mode
+  duration: 1876
+  account_id: 844586465
+  player_name: CS.Vexus
+  player_slot: Slot ke 130
+  creeps_stacked: 49
+  camps_stacked: 11
+  rune_pickups: 5
+  firstblood_claimed: 0
+  teamfight_participation: 54.55% teamfight
+  towers_killed: 0
+  roshans_killed: 0
+  observers_placed: 3
+  stuns: 35.633633 kali
+  hero: Rubick
+  slot_item_0:
+    abilities:
+      type: active
+      title: Force
+      description: Pushes any target unit 600 units in the direction it is facing.
+    hint:
+    id: 102
+    img: /apps/dota2/images/dota_react/items/force_staff.png?t=1593393829403
+    dname: Force Staff
+    qual: rare
+    cost: 2200
+    behavior: Unit Target
+    target_team: Both
+    target_type:
+      - Hero
+      - Basic
+    notes: Self-cast will cause you to use Force on yourself.
+Force Staff doesn't interrupt the target's actions.
+Will not work on a unit inside Chronosphere, Duel, or Black Hole.
+    attrib:
+      key: bonus_intellect
+      display: + {value} Intelligence
+      value: 10
+      key: bonus_health
+      display: + {value} Health
+      value: 175
+      key: push_length
+      value: 600
+      key: enemy_cast_range
+      value: 850
+      key: push_time
+      value: 0.5
+    mc: 150
+    hc: False
+    cd: 19
+    lore: Allows you to manipulate others, for good or evil.
+    components:
+      - staff_of_wizardry
+      - fluffy_hat
+    created: True
+    charges: False
+  slot_item_1:
+    abilities:
+      type: active
+      title: Mend
+      description: Restores 325 health and 200 mana to nearby allies, and removes most negative effects from the caster.
+
+Radius: 1200
+Dispel Type: Basic Dispel
+      type: passive
+      title: Guardian Aura
+      description: Grants 2.5 health regeneration, 1.5 mana regeneration and 3 armor to allied units. If an allied hero's health falls below 25%, this is increased to 14.5 health regeneration, 5 mana regeneration and 8 armor. 
+
+Radius: 1200
+    hint:
+      - Movement speed bonuses from multiple pairs of boots do not stack.
+    id: 231
+    img: /apps/dota2/images/dota_react/items/guardian_greaves.png?t=1593393829403
+    dname: Guardian Greaves
+    qual: rare
+    cost: 5050
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: The aura boost only applies to heroes.
+Mend does not affect units that have been affected by Mend or Mekansm Restore within Guardian Greaves' cooldown.
+    attrib:
+      key: bonus_movement
+      display: + {value} Movement Speed
+      value: 50
+      key: bonus_armor
+      display: + {value} Armor
+      value: 4
+      key: mana_regen
+      display: + {value} Mana Regeneration
+      value: 1.5
+      key: aura_health_regen
+      value: 2.5
+      key: aura_armor
+      value: 3
+      key: aura_mana_regen
+      value: 1.5
+      key: aura_radius
+      value: 1200
+      key: aura_health_regen_bonus
+      value: 14.5
+      key: aura_mana_regen_bonus
+      value: 5
+      key: aura_armor_bonus
+      value: 8
+      key: aura_bonus_threshold
+      value: 25
+      key: replenish_health
+      value: 325
+      key: replenish_mana
+      value: 200
+      key: replenish_radius
+      value: 1200
+      key: max_health_pct_heal_amount
+      value: 0
+    mc: False
+    hc: False
+    cd: 45
+    lore: One of many holy instruments constructed to honor the Omniscience.
+    components:
+      - mekansm
+      - arcane_boots
+      - buckler
+    created: True
+    charges: False
+  slot_item_2:
+    abilities:
+      type: active
+      title: Energy Charge
+      description: Instantly restores 15 health and mana per charge stored. 
+
+Max 20 charges. Gains a charge whenever a visible enemy within 1200 range uses an ability.
+    hint:
+    id: 36
+    img: /apps/dota2/images/dota_react/items/magic_wand.png?t=1593393829403
+    dname: Magic Wand
+    qual: common
+    cost: 450
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: Gains charges for spells cast by visible enemies in 1200 range.
+Certain abilities and item abilities will not add charges.
+    attrib:
+      key: max_charges
+      value: 20
+      key: charge_radius
+      value: 1200
+      key: bonus_all_stats
+      display: + {value} All Attributes
+      value: 3
+      key: restore_per_charge
+      value: 15
+    mc: False
+    hc: False
+    cd: 15
+    lore: A simple wand used to channel magic energies, it is favored by apprentice wizards and great warlocks alike.
+    components:
+      - magic_stick
+      - branches
+      - branches
+    created: True
+    charges: False
+  slot_item_3:
+    abilities:
+      type: use
+      title: Plant
+      description: Plant the currently active ward. Double-Click to switch the currently active ward.
+    hint:
+    id: 218
+    img: /apps/dota2/images/dota_react/items/ward_dispenser.png?t=1593393829403
+    dname: Observer and Sentry Wards
+    qual: consumable
+    cost: 50
+    behavior:
+      - Point Target
+      - AOE
+    target_team: Friendly
+    target_type: Hero
+    notes: Hold Control to give one ward to an allied hero.
+    attrib:
+      key: bonus_health
+      value: 75
+      key: observer_cost
+      value: 75
+      key: sentry_cost
+      value: 100
+      key: lifetime_observer
+      value: 360
+      key: lifetime_sentry
+      value: 420
+      key: observer_vision_range_tooltip
+      display: OBSERVER VISION RANGE: {value}
+      value: 1600
+      key: observer_duration_minutes_tooltip
+      display: OBSERVER DURATION (MINUTES): {value}
+      value: 6
+      key: sentry_duration_minutes_tooltip
+      display: SENTRY DURATION (MINUTES): {value}
+      value: 8
+      key: true_sight_range
+      display: SENTRY TRUE SIGHT RANGE: {value}
+      value: 1000
+      key: cast_range_observer
+      value: 500
+      key: cast_range_sentry
+      value: 500
+    mc: False
+    hc: False
+    cd: False
+    lore: Advancements in stacking efficiency have made wards easier to carry than ever.
+    components:
+      - ward_sentry
+      - ward_observer
+    created: True
+    charges: False
+  slot_item_4:
+    abilities:
+      type: active
+      title: Ghost Form
+      description: You enter ghost form for 4 seconds, becoming immune to physical damage, but are unable to attack and -40% more vulnerable to magic damage.
+    hint:
+    id: 37
+    img: /apps/dota2/images/dota_react/items/ghost.png?t=1593393829403
+    dname: Ghost Scepter
+    qual: component
+    cost: 1500
+    behavior:
+      - No Target
+      - Instant Cast
+    dispellable: Yes
+    notes: Ends if you become Spell Immune, and will have no effect if you are already Spell Immune.
+Shares cooldown with Ethereal Blade.
+    attrib:
+      key: bonus_all_stats
+      display: + {value} All Attributes
+      value: 5
+      key: duration
+      value: 4.0
+      key: extra_spell_damage_percent
+      value: -40
+    mc: False
+    hc: False
+    cd: 22
+    lore: Imbues the wielder with a ghostly presence, allowing them to evade physical damage.
+    components: None
+    created: False
+    charges: False
+  slot_item_5:
+    abilities:
+      type: active
+      title: Blink
+      description: Teleport to a target point up to 1200 units away. 
+
+Blink Dagger cannot be used for 3 seconds after taking damage from an enemy hero or Roshan.
+    hint:
+    id: 1
+    img: /apps/dota2/images/dota_react/items/blink.png?t=1593393829403
+    dname: Blink Dagger
+    qual: component
+    cost: 2250
+    behavior: Point Target
+    notes: Self-casting will cause you to teleport in the direction of your team's fountain.
+If you used Blink to teleport to a distance over the maximum range, you'll be teleported 4/5 of the maximum range instead.
+    attrib:
+      key: blink_range
+      value: 1200
+      key: blink_damage_cooldown
+      value: 3.0
+      key: blink_range_clamp
+      value: 960
+    mc: False
+    hc: False
+    cd: 15
+    lore: The fabled dagger used by the fastest assassin ever to walk the lands.
+    components: None
+    created: False
+    charges: False
+  item_neutral:
+    abilities:
+      type: passive
+      title: Certain Strike
+      description: Empowers your next attack with 250 bonus magical damage and True Strike. Ranged Attackers have +350 bonus range for the attack.
+    hint:
+    id: 361
+    img: /apps/dota2/images/dota_react/items/enchanted_quiver.png?t=1593393829403
+    dname: Enchanted Quiver
+    cost: 0
+    notes: 
+    attrib:
+      key: bonus_attack_range
+      display: + {value} Attack Range (Ranged Only)
+      value: 75
+      key: bonus_damage
+      value: 250
+      key: active_bonus_attack_range
+      value: 350
+    mc: False
+    hc: False
+    cd: 4
+    lore: A graceful gift blessed by the goddess of the hunt.
+    components: None
+    created: False
+    charges: False
+    tier: 3
+  backpack_0: None
+  backpack_1: None
+  backpack_2: None
+  kills: 2 kali
+  deaths: 5 kali
+  assists: 10 kali
+  denies: 0 kali
+  last_hits: 125 kali
+  leaver_status: finished match, no abandon
+  gold_per_min: 399
+  xp_per_min: 581
+  level: 18
+  net_worth: 12069
+  aghanims_scepter: No
+  aghanims_shard: No
+  moonshard: No
+  hero_damage: 12628
+  tower_damage: 0
+  hero_healing: 258
+  gold: 419
+  gold_spent: 11740
+  win: Yes
+  lose: No
+  total_gold: 12475
+  total_xp: 18165
+  kda: Pemain terlibat dalam 2.00 kill atau assist untuk setiap 1 kali mati.
+  abandons: 0
+  neutral_kills: 47
+  tower_kills: 0
+  courier_kills: 0
+  lane_kills: 75
+  hero_kills: 2
+  observer_kills: 0
+  sentry_kills: 0
+  roshan_kills: 0
+  ancient_kills: 3
+  buyback_count: 0
+  observer_uses: 1
+  sentry_uses: 0
+  lane_efficiency: Pemain memiliki efisiensi laning sebesar 0.35%. atau 35%
+  lane: 1
+  lane_role: 3
+  is_roaming: No
+  game_mode: Captain's Mode
+  duration: 1876
+  account_id: 315850275
+  player_name: CS.Nupiq
+  player_slot: Slot ke 131
+  creeps_stacked: 6
+  camps_stacked: 2
+  rune_pickups: 0
+  firstblood_claimed: 1
+  teamfight_participation: 59.09% teamfight
+  towers_killed: 2
+  roshans_killed: 0
+  observers_placed: 0
+  stuns: 0 kali
+  hero: Bristleback
+  slot_item_0:
+    abilities:
+      type: active
+      title: Bloodpact
+      description: Increases Bloodstone's Spell Lifesteal by 4x. Lasts 5 seconds.
+    hint:
+    id: 121
+    img: /apps/dota2/images/dota_react/items/bloodstone.png?t=1593393829403
+    dname: Bloodstone
+    qual: epic
+    cost: 4400
+    behavior:
+      - No Target
+      - Instant Cast
+    dmg_type: Magical
+    notes: Using Bloodpact leaves you drained for 40 seconds and can't benefit from Bloodpact again during that time.
+    attrib:
+      key: bonus_aoe
+      display: + {value} AoE Bonus
+      value: 75
+      key: bonus_health
+      display: + {value} Health
+      value: 450
+      key: bonus_mana
+      display: + {value} Mana
+      value: 450
+      key: bonus_mp_regen
+      display: + {value} Mana Regeneration
+      value: 3
+      key: spell_lifesteal
+      display: + {value}% Spell Lifesteal
+      value: 20
+      key: buff_duration
+      value: 5
+      key: lifesteal_multiplier
+      value: 4
+      key: hp_cost
+      value: 0
+    mc: False
+    hc: False
+    cd: 35
+    lore: The Bloodstone's bright ruby color is unmistakable on the battlefield, as the owner seems to have infinite vitality and spirit.
+    components:
+      - voodoo_mask
+      - soul_booster
+      - void_stone
+    created: True
+    charges: False
+  slot_item_1:
+    abilities:
+      type: active
+      title: Switch Attribute
+      description: Switches between +10 Strength, +10 Agility, or +10 Intelligence.
+    hint:
+      - Movement speed bonuses from multiple pairs of boots do not stack.
+    id: 63
+    img: /apps/dota2/images/dota_react/items/power_treads.png?t=1593393829403
+    dname: Power Treads
+    qual: common
+    cost: 1400
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: Power Treads can be built using a Belt of Strength, Band of Elvenskin, or a Robe of the Magi.
+    attrib:
+      key: bonus_movement_speed_ranged
+      display: + {value} Move Speed (Ranged Heroes)
+      value: 45
+      key: bonus_movement_speed_melee
+      display: + {value} Move Speed (Melee Heroes)
+      value: 55
+      key: bonus_stat
+      display: + {value} Selected Attribute
+      value: 10
+      key: bonus_attack_speed
+      display: + {value} Attack Speed
+      value: 25
+      key: bonus_damage
+      value: 0
+    mc: False
+    hc: False
+    cd: False
+    lore: A pair of tough-skinned boots that change to meet the demands of the wearer.
+    components:
+      - boots
+      - gloves
+      - belt_of_strength
+    created: True
+    charges: False
+  slot_item_2:
+    abilities:
+      type: passive
+      title: Damage Block
+      description: Grants a 60% chance to block 50 damage from incoming attacks on melee heroes, and 25 damage on ranged.
+    hint:
+    id: 125
+    img: /apps/dota2/images/dota_react/items/vanguard.png?t=1593393829403
+    dname: Vanguard
+    qual: epic
+    cost: 1700
+    notes: Multiple sources of damage block do not stack.
+    attrib:
+      key: bonus_health
+      display: + {value} Health
+      value: 250
+      key: bonus_health_regen
+      display: + {value} Health Regeneration
+      value: 4.5
+      key: block_damage_melee
+      value: 50
+      key: block_damage_ranged
+      value: 25
+      key: block_chance
+      value: 60
+    mc: False
+    hc: False
+    cd: False
+    lore: A powerful shield that defends its wielder from even the most vicious of attacks.
+    components:
+      - ring_of_health
+      - vitality_booster
+    created: True
+    charges: False
+  slot_item_3:
+    abilities:
+      type: passive
+      title: Ability Upgrade
+      description: Upgrades the ultimate, and some abilities, of all heroes.
+    hint:
+    id: 108
+    img: /apps/dota2/images/dota_react/items/ultimate_scepter.png?t=1593393829403
+    dname: Aghanim's Scepter
+    qual: rare
+    cost: 4200
+    target_team: Friendly
+    target_type: Hero
+    notes: 
+    attrib:
+      key: bonus_all_stats
+      display: + {value} All Attributes
+      value: 10
+      key: bonus_health
+      display: + {value} Health
+      value: 175
+      key: bonus_mana
+      display: + {value} Mana
+      value: 175
+    mc: False
+    hc: False
+    cd: False
+    lore: The scepter of a wizard with demigod-like powers.
+    components:
+      - point_booster
+      - staff_of_wizardry
+      - ogre_axe
+      - blade_of_alacrity
+    created: True
+    charges: False
+  slot_item_4:
+    id: 73
+    img: /apps/dota2/images/dota_react/items/bracer.png?t=1593393829403
+    dname: Bracer
+    qual: common
+    cost: 505
+    notes: 
+    attrib:
+      key: bonus_strength
+      display: + {value} Strength
+      value: 5
+      key: bonus_agility
+      display: + {value} Agility
+      value: 2
+      key: bonus_intellect
+      display: + {value} Intelligence
+      value: 2
+      key: bonus_damage
+      value: 0
+      key: bonus_health_regen
+      display: + {value} Health Regeneration
+      value: 0.75
+      key: bonus_health
+      display: + {value} Health
+      value: 50
+    mc: False
+    hc: False
+    cd: False
+    lore: The bracer is a common choice to toughen up defenses and increase longevity.
+    components:
+      - circlet
+      - gauntlets
+    created: True
+    charges: False
+  slot_item_5:
+    abilities:
+      type: active
+      title: Energy Charge
+      description: Instantly restores 15 health and mana per charge stored. 
+
+Max 20 charges. Gains a charge whenever a visible enemy within 1200 range uses an ability.
+    hint:
+    id: 36
+    img: /apps/dota2/images/dota_react/items/magic_wand.png?t=1593393829403
+    dname: Magic Wand
+    qual: common
+    cost: 450
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: Gains charges for spells cast by visible enemies in 1200 range.
+Certain abilities and item abilities will not add charges.
+    attrib:
+      key: max_charges
+      value: 20
+      key: charge_radius
+      value: 1200
+      key: bonus_all_stats
+      display: + {value} All Attributes
+      value: 3
+      key: restore_per_charge
+      value: 15
+    mc: False
+    hc: False
+    cd: 15
+    lore: A simple wand used to channel magic energies, it is favored by apprentice wizards and great warlocks alike.
+    components:
+      - magic_stick
+      - branches
+      - branches
+    created: True
+    charges: False
+  item_neutral:
+    abilities:
+      type: passive
+      title: Afterburn
+      description: Causes attacks to burn the enemy, dealing 22 damage per second for 3 seconds. Affects buildings.
+    hint:
+    id: 358
+    img: /apps/dota2/images/dota_react/items/dragon_scale.png?t=1593393829403
+    dname: Dragon Scale
+    cost: 0
+    notes: 
+    attrib:
+      key: bonus_armor
+      display: + {value} Armor
+      value: 5
+      key: bonus_hp_regen
+      display: + {value} Health Regeneration
+      value: 5
+      key: damage_per_sec
+      value: 22
+      key: duration
+      value: 3
+    mc: False
+    hc: False
+    cd: False
+    lore: The remains of a dragon always outvalue the wealth of even the most prodigious hoard.
+    components: None
+    created: False
+    charges: False
+    tier: 2
+  backpack_0: None
+  backpack_1: None
+  backpack_2: None
+  kills: 10 kali
+  deaths: 8 kali
+  assists: 3 kali
+  denies: 1 kali
+  last_hits: 179 kali
+  leaver_status: player DC, no abandon
+  gold_per_min: 525
+  xp_per_min: 594
+  level: 18
+  net_worth: 14891
+  aghanims_scepter: No
+  aghanims_shard: Yes
+  moonshard: No
+  hero_damage: 23267
+  tower_damage: 2062
+  hero_healing: 0
+  gold: 836
+  gold_spent: 14595
+  win: Yes
+  lose: No
+  total_gold: 16415
+  total_xp: 18572
+  kda: Pemain terlibat dalam 1.44 kill atau assist untuk setiap 1 kali mati.
+  abandons: 0
+  neutral_kills: 43
+  tower_kills: 2
+  courier_kills: 0
+  lane_kills: 127
+  hero_kills: 10
+  observer_kills: 0
+  sentry_kills: 0
+  roshan_kills: 0
+  ancient_kills: 8
+  buyback_count: 0
+  observer_uses: 0
+  sentry_uses: 0
+  lane_efficiency: Pemain memiliki efisiensi laning sebesar 0.74%. atau 74%
+  lane: 1
+  lane_role: 3
+  is_roaming: No
+  game_mode: Captain's Mode
+  duration: 1876
+  account_id: 169359670
+  player_name: CS.Qipik
+  player_slot: Slot ke 132
+  creeps_stacked: 17
+  camps_stacked: 4
+  rune_pickups: 6
+  firstblood_claimed: 0
+  teamfight_participation: 31.82% teamfight
+  towers_killed: 0
+  roshans_killed: 0
+  observers_placed: 1
+  stuns: 9.8667965 kali
+  hero: Storm Spirit
+  slot_item_0:
+    abilities:
+      type: active
+      title: Soul Burn
+      description: Silences the target unit for 5 seconds. At the end of the silence, 30% of the damage received while silenced is inflicted as bonus magical damage.
+    hint:
+    id: 98
+    img: /apps/dota2/images/dota_react/items/orchid.png?t=1593393829403
+    dname: Orchid Malevolence
+    qual: rare
+    cost: 3275
+    behavior: Unit Target
+    dispellable: Yes
+    target_team: Enemy
+    target_type:
+      - Hero
+      - Basic
+    notes: 
+    attrib:
+      key: bonus_attack_speed
+      display: + {value} Attack Speed
+      value: 40
+      key: bonus_damage
+      display: + {value} Damage
+      value: 10
+      key: bonus_mana_regen
+      display: + {value} Mana Regeneration
+      value: 3.25
+      key: bonus_health_regen
+      display: + {value} Health Regeneration
+      value: 6.0
+      key: bonus_intellect
+      display: + {value} Intelligence
+      value: 10
+      key: silence_damage_percent
+      value: 30
+      key: silence_duration
+      value: 5
+    mc: 125
+    hc: False
+    cd: 18
+    lore: A garnet rod constructed from the essence of a fire demon.
+    components:
+      - oblivion_staff
+      - cornucopia
+    created: True
+    charges: False
+  slot_item_1:
+    abilities:
+      type: passive
+      title: Witch Blade
+      description: Causes your next attack to apply a poison for 4 seconds, slowing by 25% and dealing 0.75x your intelligence as damage every second. This attack has True Strike.
+    hint:
+    id: 534
+    img: /apps/dota2/images/dota_react/items/witch_blade.png?t=1593393829403
+    dname: Witch Blade
+    qual: common
+    cost: 2775
+    notes: 
+    attrib:
+      key: bonus_attack_speed
+      display: + {value} Attack Speed
+      value: 40
+      key: bonus_intellect
+      display: + {value} Intelligence
+      value: 12
+      key: bonus_mana_regen
+      display: + {value} Mana Regeneration
+      value: 1.5
+      key: bonus_armor
+      display: + {value} Armor
+      value: 6
+      key: int_damage_multiplier
+      value: 0.75
+      key: slow
+      value: 25
+      key: slow_duration
+      value: 4
+      key: projectile_speed
+      display: + {value} Projectile Speed
+      value: 300
+    mc: False
+    hc: False
+    cd: 9
+    lore: A spiteful blade inadvertently possessed by the soul of its incautious creator.
+    components:
+      - oblivion_staff
+      - chainmail
+    created: True
+    charges: False
+  slot_item_2:
+    id: 273
+    img: /apps/dota2/images/dota_react/items/kaya_and_sange.png?t=1593393829403
+    dname: Kaya and Sange
+    qual: artifact
+    cost: 4200
+    notes: 
+    attrib:
+      key: bonus_strength
+      display: + {value} Strength
+      value: 16
+      key: bonus_intellect
+      display: + {value} Intelligence
+      value: 16
+      key: slow_resistance
+      display: + {value}% Slow Resistance
+      value: 25
+      key: mana_regen_multiplier
+      display: + {value}% Mana Regen Amplification
+      value: 50
+      key: spell_amp
+      display: + {value}% Spell Amplification
+      value: 12
+      key: hp_regen_amp
+      display: + {value}% Health Regen and Lifesteal Amp
+      value: 25
+      key: spell_lifesteal_amp
+      display: + {value}% Spell Lifesteal Amplification
+      value: 25
+      key: manacost_reduction
+      display: + {value}% Mana Cost/Mana Loss Reduction
+      value: 25
+    mc: False
+    hc: False
+    cd: False
+    lore: Two of three known items of unimaginable power that many believe were crafted at the same enchanter's forge.
+    components:
+      - sange
+      - kaya
+    created: True
+    charges: False
+  slot_item_3:
+    id: 77
+    img: /apps/dota2/images/dota_react/items/null_talisman.png?t=1593393829403
+    dname: Null Talisman
+    qual: common
+    cost: 505
+    notes: 
+    attrib:
+      key: bonus_intellect
+      display: + {value} Intelligence
+      value: 5
+      key: bonus_strength
+      display: + {value} Strength
+      value: 2
+      key: bonus_agility
+      display: + {value} Agility
+      value: 2
+      key: bonus_max_mana_percentage
+      display: + {value}% Max Mana Bonus
+      value: 3
+      key: bonus_mana_regen
+      display: + {value} Mana Regeneration
+      value: 1.0
+    mc: False
+    hc: False
+    cd: False
+    lore: A small gemstone attached to several chains.
+    components:
+      - circlet
+      - mantle
+    created: True
+    charges: False
+  slot_item_4:
+    abilities:
+      type: active
+      title: Switch Attribute
+      description: Switches between +10 Strength, +10 Agility, or +10 Intelligence.
+    hint:
+      - Movement speed bonuses from multiple pairs of boots do not stack.
+    id: 63
+    img: /apps/dota2/images/dota_react/items/power_treads.png?t=1593393829403
+    dname: Power Treads
+    qual: common
+    cost: 1400
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: Power Treads can be built using a Belt of Strength, Band of Elvenskin, or a Robe of the Magi.
+    attrib:
+      key: bonus_movement_speed_ranged
+      display: + {value} Move Speed (Ranged Heroes)
+      value: 45
+      key: bonus_movement_speed_melee
+      display: + {value} Move Speed (Melee Heroes)
+      value: 55
+      key: bonus_stat
+      display: + {value} Selected Attribute
+      value: 10
+      key: bonus_attack_speed
+      display: + {value} Attack Speed
+      value: 25
+      key: bonus_damage
+      value: 0
+    mc: False
+    hc: False
+    cd: False
+    lore: A pair of tough-skinned boots that change to meet the demands of the wearer.
+    components:
+      - boots
+      - gloves
+      - belt_of_strength
+    created: True
+    charges: False
+  slot_item_5: None
+  item_neutral:
+    abilities:
+      type: active
+      title: Consume
+      description: Consumes all charges and grants a target allied unit a buff that provides +2.5 Health Regen and +1.25 Mana Regen per charge for 8s. 
+
+If the unit is attacked by an enemy hero or Roshan, the effect is lost.
+    hint:
+    id: 305
+    img: /apps/dota2/images/dota_react/items/royal_jelly.png?t=1593393829403
+    dname: Royal Jelly
+    qual: consumable
+    cost: 0
+    behavior:
+      - Unit Target
+      - Instant Cast
+    target_team: Friendly
+    target_type: Hero
+    notes: 
+    attrib:
+      key: bonus_health
+      display: + {value} Health
+      value: 50
+      key: bonus_mana
+      display: + {value} Mana
+      value: 50
+      key: max_charges
+      value: 10
+      key: use_cooldown
+      value: 12
+      key: health_regen
+      value: 2.5
+      key: mana_regen
+      value: 1.25
+      key: regen_duration
+      value: 8
+    mc: False
+    hc: False
+    cd: False
+    lore: To those who harvest olgru jelly, success serves more than mere profit--it's often the means to survival--for only the jelly itself can cure the ravages that follow a sting from the vigilant denizens of the giant hives.
+    components: None
+    created: False
+    charges: 5
+    tier: 1
+  backpack_0: None
+  backpack_1: None
+  backpack_2: None
+  kills: 5 kali
+  deaths: 6 kali
+  assists: 2 kali
+  denies: 2 kali
+  last_hits: 229 kali
+  leaver_status: finished match, no abandon
+  gold_per_min: 480
+  xp_per_min: 690
+  level: 20
+  net_worth: 13319
+  aghanims_scepter: No
+  aghanims_shard: No
+  moonshard: No
+  hero_damage: 8375
+  tower_damage: 548
+  hero_healing: 0
+  gold: 1164
+  gold_spent: 14090
+  win: Yes
+  lose: No
+  total_gold: 15008
+  total_xp: 21574
+  kda: Pemain terlibat dalam 1.00 kill atau assist untuk setiap 1 kali mati.
+  abandons: 0
+  neutral_kills: 121
+  tower_kills: 0
+  courier_kills: 0
+  lane_kills: 99
+  hero_kills: 5
+  observer_kills: 0
+  sentry_kills: 0
+  roshan_kills: 0
+  ancient_kills: 3
+  buyback_count: 0
+  observer_uses: 1
+  sentry_uses: 0
+  lane_efficiency: Pemain memiliki efisiensi laning sebesar 0.82%. atau 81%
+  lane: 2
+  lane_role: 2
+  is_roaming: No
+  game_mode: Captain's Mode
+  duration: 1876
+  account_id: 338281289
+  player_name: CS.Fijik
+  player_slot: Slot ke 133
+  creeps_stacked: 0
+  camps_stacked: 0
+  rune_pickups: 2
+  firstblood_claimed: 0
+  teamfight_participation: 63.64% teamfight
+  towers_killed: 0
+  roshans_killed: 0
+  observers_placed: 9
+  stuns: 0 kali
+  hero: Disruptor
+  slot_item_0:
+    abilities:
+      type: active
+      title: Replenish Mana
+      description: Restores 150 mana to all nearby allies.
+
+Radius: 1200
+      type: passive
+      title: Basilius Aura
+      description: Grants 1 mana regeneration to allies. 
+
+Radius: 1200
+    hint:
+      - Movement speed bonuses from multiple pairs of boots do not stack.
+    id: 180
+    img: /apps/dota2/images/dota_react/items/arcane_boots.png?t=1593393829403
+    dname: Arcane Boots
+    qual: rare
+    cost: 1400
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: Does not work on Meepo clones.
+    attrib:
+      key: bonus_movement
+      display: + {value} Movement Speed
+      value: 45
+      key: mana_regen
+      display: + {value} Mana Regeneration
+      value: 0.25
+      key: aura_mana_regen
+      value: 1
+      key: aura_radius
+      value: 1200
+      key: replenish_amount
+      value: 150
+      key: replenish_radius
+      value: 1200
+    mc: False
+    hc: False
+    cd: 55
+    lore: Magi equipped with these boots are valued in battle.
+    components:
+      - boots
+      - ring_of_basilius
+    created: True
+    charges: False
+  slot_item_1:
+    abilities:
+      type: active
+      title: Force
+      description: Pushes any target unit 600 units in the direction it is facing.
+    hint:
+    id: 102
+    img: /apps/dota2/images/dota_react/items/force_staff.png?t=1593393829403
+    dname: Force Staff
+    qual: rare
+    cost: 2200
+    behavior: Unit Target
+    target_team: Both
+    target_type:
+      - Hero
+      - Basic
+    notes: Self-cast will cause you to use Force on yourself.
+Force Staff doesn't interrupt the target's actions.
+Will not work on a unit inside Chronosphere, Duel, or Black Hole.
+    attrib:
+      key: bonus_intellect
+      display: + {value} Intelligence
+      value: 10
+      key: bonus_health
+      display: + {value} Health
+      value: 175
+      key: push_length
+      value: 600
+      key: enemy_cast_range
+      value: 850
+      key: push_time
+      value: 0.5
+    mc: 150
+    hc: False
+    cd: 19
+    lore: Allows you to manipulate others, for good or evil.
+    components:
+      - staff_of_wizardry
+      - fluffy_hat
+    created: True
+    charges: False
+  slot_item_2:
+    abilities:
+      type: active
+      title: Glimmer
+      description: After a 0.5 second delay, grants invisibility, 40 movement speed and a magic damage barrier that absorbs up to 300 damage to you or a target allied unit for 5 seconds.
+
+Can be cast while channeling.
+    hint:
+    id: 254
+    img: /apps/dota2/images/dota_react/items/glimmer_cape.png?t=1593393829403
+    dname: Glimmer Cape
+    qual: rare
+    cost: 2150
+    behavior:
+      - Instant Cast
+      - Unit Target
+    dispellable: Yes
+    target_team: Friendly
+    target_type:
+      - Hero
+      - Basic
+    notes: 
+    attrib:
+      key: initial_fade_delay
+      value: 0.5
+      key: secondary_fade_delay
+      value: 0.5
+      key: active_movement_speed
+      value: 40
+      key: duration
+      value: 5
+      key: bonus_magical_armor
+      display: + {value}% Magic Resistance
+      value: 25
+      key: barrier_block
+      value: 300
+    mc: 90
+    hc: False
+    cd: 14
+    lore: The stolen cape of a master illusionist.
+    components:
+      - shadow_amulet
+      - cloak
+    created: True
+    charges: False
+  slot_item_3:
+    abilities:
+      type: active
+      title: Energy Charge
+      description: Instantly restores 15 health and mana per charge stored. 
+
+Max 20 charges. Gains a charge whenever a visible enemy within 1200 range uses an ability.
+    hint:
+    id: 36
+    img: /apps/dota2/images/dota_react/items/magic_wand.png?t=1593393829403
+    dname: Magic Wand
+    qual: common
+    cost: 450
+    behavior:
+      - Instant Cast
+      - No Target
+    notes: Gains charges for spells cast by visible enemies in 1200 range.
+Certain abilities and item abilities will not add charges.
+    attrib:
+      key: max_charges
+      value: 20
+      key: charge_radius
+      value: 1200
+      key: bonus_all_stats
+      display: + {value} All Attributes
+      value: 3
+      key: restore_per_charge
+      value: 15
+    mc: False
+    hc: False
+    cd: 15
+    lore: A simple wand used to channel magic energies, it is favored by apprentice wizards and great warlocks alike.
+    components:
+      - magic_stick
+      - branches
+      - branches
+    created: True
+    charges: False
+  slot_item_4: None
+  slot_item_5:
+    abilities:
+      type: use
+      title: Disguise
+      description: Turns the caster and all allied player-controlled units in a 1200 radius invisible, and grants 15% bonus movement speed for 45 seconds. 
+
+ While the caster is still disguised, any allies that come within 300 range of them will also get the buff applied to them. Each smoke can only be applied once to allies. 
+
+Attacking or moving within 1025 range of an enemy hero or tower, will break the invisibility. 
+
+Disguise grants invisibility that is immune to True Sight.
+    hint:
+    id: 188
+    img: /apps/dota2/images/dota_react/items/smoke_of_deceit.png?t=1593393829403
+    dname: Smoke of Deceit
+    qual: consumable
+    cost: 50
+    behavior: No Target
+    notes: 
+    attrib:
+      key: application_radius
+      value: 1200
+      key: visibility_radius
+      value: 1025
+      key: bonus_movement_speed
+      value: 15
+      key: duration
+      value: 45.0
+      key: second_cast_cooldown
+      value: 2.0
+      key: secondary_application_radius
+      value: 300
+    mc: False
+    hc: False
+    cd: 1
+    lore: The charlatan wizard Myrddin's only true contribution to the arcane arts.
+    components: None
+    created: False
+    charges: 1
+  item_neutral:
+    abilities:
+      type: passive
+      title: Sixth Sense
+      description: Automatically dodge an attack from an enemy hero.
+    hint:
+    id: 2193
+    img: /apps/dota2/images/dota_react/items/gossamer_cape.png?t=1593393829403
+    dname: Gossamer Cape
+    cost: 0
+    notes: 
+    attrib:
+      key: movement_speed
+      display: + {value} Movement Speed
+      value: 20
+    mc: False
+    hc: False
+    cd: 4
+    lore: 
+    components: None
+    created: False
+    charges: False
+    tier: 2
+  backpack_0: None
+  backpack_1: None
+  backpack_2: None
+  kills: 0 kali
+  deaths: 5 kali
+  assists: 15 kali
+  denies: 1 kali
+  last_hits: 25 kali
+  leaver_status: finished match, no abandon
+  gold_per_min: 275
+  xp_per_min: 506
+  level: 17
+  net_worth: 8063
+  aghanims_scepter: No
+  aghanims_shard: Yes
+  moonshard: No
+  hero_damage: 8259
+  tower_damage: 281
+  hero_healing: 0
+  gold: 413
+  gold_spent: 8445
+  win: Yes
+  lose: No
+  total_gold: 8598
+  total_xp: 15820
+  kda: Pemain terlibat dalam 2.50 kill atau assist untuk setiap 1 kali mati.
+  abandons: 0
+  neutral_kills: 7
+  tower_kills: 0
+  courier_kills: 0
+  lane_kills: 16
+  hero_kills: 0
+  observer_kills: 1
+  sentry_kills: 2
+  roshan_kills: 0
+  ancient_kills: 0
+  buyback_count: 0
+  observer_uses: 2
+  sentry_uses: 3
+  lane_efficiency: Pemain memiliki efisiensi laning sebesar 0.28%. atau 28%
+  lane: 3
+  lane_role: 1
+  is_roaming: No
+  game_mode: Captain's Mode
+  duration: 1876
+radiant_score: 29
+dire_score: 22
+winner: radiant
+lobby_status: Practice
+barracks_status_radiant: All barracks are intact.
+barracks_status_dire: All barracks are intact.

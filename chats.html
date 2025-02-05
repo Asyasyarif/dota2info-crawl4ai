@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat History - Dota 2 AI Coach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="static/fonts/stylesheet.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+    body {
+      font-family: 'HypatiaSansPro', sans-serif;
+      background: url('https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/home/radiant_dire5.jpg');
+      background-color: rgba(0, 0, 0, 0.7);
+      background-blend-mode: overlay;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .scrollbar-thin::-webkit-scrollbar {
+      width: 6px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-track {
+      background: rgba(0,0,0,0.1);
+    }
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+      background: rgba(239,68,68,0.5);
+      border-radius: 10px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+
+        /* ------------------------ *
+     *   Efek Overlay Squares   *
+     * ------------------------ */
+     .white {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      opacity: 0.1; /* Opacity dikurangi agar tidak terlalu dominan */
+      pointer-events: none;
+      z-index: 1;
+    }
+    .white:before {
+      z-index: 1000;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60vh;
+      background-image: linear-gradient(-180deg, #616161 0%, rgba(255,255,255,0) 100%);
+    }
+    .white:after {
+      z-index: 1000;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 20vh;
+      background-image: linear-gradient(0deg, #000000 0%, rgba(235,235,235,0) 100%);
+    }
+    .squares {
+      height: 100%;
+      display: flex;
+      border-radius: 10px;
+      justify-content: space-around;
+      overflow: hidden;
+    }
+    .square {
+      animation: squares 9.5s linear infinite;
+      align-self: flex-end;
+      width: .5em;
+      height: .5em;
+      transform: translateY(100%);
+      background: #7e7e7e;
+    }
+    .square:nth-child(2) {
+      height: .5em;
+      width: .5em;
+      border-radius: 10px;
+      animation-delay: 1s;
+      animation-duration: 17s;
+      -webkit-filter: blur(5px);
+    }
+    .square:nth-child(3) {
+      height: .5em;
+      width: .5em;
+      border-radius: 10px;
+      animation-delay: 1.5s;
+      animation-duration: 8s;
+      -webkit-filter: blur(0px);
+    }
+    .square:nth-child(4) {
+      height: .5em;
+      width: .5em;
+      border-radius: 10px;
+      animation-delay: 0.5s;
+      -webkit-filter: blur(3px);
+      animation-duration: 13s;
+    }
+    .square:nth-child(5) {
+      height: .5em;
+      width: .5em;
+      animation-delay: 4s;
+      -webkit-filter: blur(2px);
+      animation-duration: 11s;
+    }
+    .square:nth-child(6) {
+      height: .5em;
+      width: .5em;
+      animation-delay: 2s;
+      -webkit-filter: blur(1px);
+      animation-duration: 9s;
+    }
+    .square:nth-child(7) {
+      height: .5em;
+      width: .5em;
+      border-radius: 10px;
+      -webkit-filter: blur(2.5px);
+      animation-duration: 12s;
+    }
+    .square:nth-child(8) {
+      height: .5em;
+      width: .5em;
+      border-radius: 10px;
+      animation-delay: 5s;
+      -webkit-filter: blur(6px);
+      animation-duration: 18s;
+    }
+    .square:nth-child(9) {
+      height: .5em;
+      width: .5em;
+      border-radius: 10px;
+      -webkit-filter: blur(0.5px);
+      animation-duration: 9s;
+    }
+    .square:nth-child(10) {
+      height: .5em;
+      width: .5em;
+      border-radius: 10px;
+      animation-delay: 6s;
+      -webkit-filter: blur(0.5px);
+      animation-duration: 12s;
+    }
+    @keyframes squares {
+      from {
+        transform: translateY(100%) rotate(-50deg);
+      }
+      to {
+        transform: translateY(calc(-100vh - 100%)) rotate(20deg);
+      }
+    }
+  </style>
+</head>
+<body class="text-white">
+  <div class="white">
+    <div class="squares">
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+    </div>
+  </div>
+  <!-- Nav Bar dengan gradasi smooth ke hitam -->
+  <nav class="fixed top-0 left-0 right-0 bg-gradient-to-b from-black/30 to-black backdrop-blur-sm shadow-md">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <img src="https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/global/dota2_logo_horiz.png" class="h-10" alt="Dota 2 Logo" />
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="#heroSection" class="text-white hover:text-red-400 transition-colors">Home</a>
+        <a href="#contact" class="text-white hover:text-red-400 transition-colors">Privacy Policy</a>
+        <a href="/login" class="px-4 py-2 border border-white-500 text-black rounded bg-white transition-colors">
+          SIGN IN
+        </a>
+      </div>
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button id="menuBtn">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobileMenu" class="md:hidden hidden bg-black/80 backdrop-blur-sm">
+      <div class="container mx-auto px-4 pb-4">
+        <div class="flex flex-col space-y-2">
+          <a href="#heroSection" class="text-white hover:text-red-400 transition-colors">Home</a>
+          <a href="#heroSection" class="text-white hover:text-red-400 transition-colors">Privacy Policy</a>
+          <a href="/login" class="px-4 py-2 border border-red-500 text-red-500 rounded hover:bg-red-500 hover:text-white transition-colors">
+            Login Account
+          </a>
+          <button id="mobileLogoutBtn" class="bg-red-500 px-4 py-2 rounded-md text-white hover:bg-red-600 transition-colors">Logout</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content dengan margin-top agar tidak tertutup oleh nav -->
+  <main class="mt-20 flex flex-col md:flex-row h-[calc(100vh-80px)] gap-4 p-4">
+    <!-- Sidebar Chat History ramping -->
+    <aside class="md:w-1/6 bg-gray-900/80 p-4 rounded-lg overflow-y-auto scrollbar-thin">
+      <h2 class="text-xl font-semibold mb-4">Chat History</h2>
+      <ul class="space-y-4">
+        <li class="p-3 bg-gray-800/70 hover:bg-gray-800 transition-colors cursor-pointer rounded-md" onclick="loadChat('chat1')">
+          <p class="font-semibold">Match #123456789</p>
+          <p class="text-sm text-gray-400">Dota 2 - Analysis on 2025-02-01</p>
+        </li>
+        <li class="p-3 bg-gray-800/70 hover:bg-gray-800 transition-colors cursor-pointer rounded-md" onclick="loadChat('chat2')">
+          <p class="font-semibold">Match #987654321</p>
+          <p class="text-sm text-gray-400">Dota 2 - Analysis on 2025-01-28</p>
+        </li>
+        <li class="p-3 bg-gray-800/70 hover:bg-gray-800 transition-colors cursor-pointer rounded-md" onclick="loadChat('chat3')">
+          <p class="font-semibold">Match #1122334455</p>
+          <p class="text-sm text-gray-400">Dota 2 - Analysis on 2025-01-20</p>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Panel Chat yang lebih lebar -->
+    <section class="md:w-7/12 bg-gray-900/80 p-4 rounded-lg flex flex-col">
+      <div class="flex items-center justify-between border-b border-gray-700/50 pb-2 mb-4">
+        <div class="flex items-center gap-4">
+          <div class="bg-red-500/20 p-2 rounded-full">
+            <img src="https://www.svgrepo.com/show/306461/artificial-intelligence.svg" class="h-10 w-10" alt="Coach AI" />
+          </div>
+          <div>
+            <h3 class="font-bold text-red-400 text-lg">Chat: <span id="chatTitle">Select a Chat</span></h3>
+            <p class="text-sm text-gray-400">Previous match analysis conversation</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="chatArea" class="flex-1 overflow-y-auto scrollbar-thin space-y-4 p-2 fade-in">
+        <p class="text-gray-400 text-center">Select a chat history item to load conversation.</p>
+      </div>
+
+      <!-- Input message tetap berada di bawah -->
+      <div class="border-t border-gray-700/50 pt-2 mt-4">
+        <div class="flex gap-2">
+          <input type="text" id="chatInput" class="flex-1 bg-gray-800 px-4 py-3 rounded-md text-sm focus:ring-2 focus:ring-red-500 border border-gray-700/50" placeholder="Type your message..." />
+          <button id="sendButton" class="bg-red-500 p-3 rounded-md hover:bg-red-600 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Card Info Match yang lebih lebar -->
+    <section class="md:w-1/4 bg-gray-900/80 p-4 rounded-lg overflow-y-auto scrollbar-thin">
+      <h2 class="text-xl font-semibold mb-4">Info Match</h2>
+      <div class="space-y-4">
+        <div>
+          <p class="mb-2">Hero: <span id="matchHero">--</span></p>
+        </div>
+        <div>
+          <p class="mb-2">Items: <span id="matchItems">--</span></p>
+        </div>
+        <div>
+          <p>Logs:</p>
+          <ul id="matchLogs" class="list-disc list-inside text-sm text-gray-300">
+            <li>Log contoh 1</li>
+            <li>Log contoh 2</li>
+            <li>Log contoh 3</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const chats = {
+      chat1: [
+        { text: 'Hello, I need help with my match analysis.', isUser: true },
+        { text: 'Sure, I noticed you had issues with positioning in the mid-game.', isUser: false },
+        { text: 'Thanks for the tip!', isUser: true }
+      ],
+      chat2: [
+        { text: 'Can you analyze my late-game strategy?', isUser: true },
+        { text: 'Absolutely. You might benefit from ward placements to prevent ganks.', isUser: false },
+        { text: 'I will try that next match.', isUser: true }
+      ],
+      chat3: [
+        { text: "I'm not sure why my team lost last night.", isUser: true },
+        { text: 'It appears your rotations were a bit off. Focus on map awareness.', isUser: false },
+        { text: 'I understand, thanks!', isUser: true }
+      ]
+    };
+
+    const chatArea = document.getElementById('chatArea');
+    const chatTitle = document.getElementById('chatTitle');
+    const chatInput = document.getElementById('chatInput');
+    const sendButton = document.getElementById('sendButton');
+
+    let activeChatId = null;
+
+    function loadChat(chatId) {
+      activeChatId = chatId;
+      chatArea.innerHTML = '';
+      chatTitle.textContent = chatId.toUpperCase();
+      const messages = chats[chatId] || [];
+      messages.forEach(msg => {
+        addMessage(msg.text, msg.isUser);
+      });
+    }
+
+    function addMessage(content, isUser) {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('flex', isUser ? 'justify-end' : 'justify-start');
+
+      const messageBubble = document.createElement('div');
+      messageBubble.classList.add('p-3', 'max-w-[75%]', 'border', 'my-1', 'rounded-md');
+      if (isUser) {
+        messageBubble.classList.add('bg-red-500/20', 'border-red-500/30', 'text-white');
+      } else {
+        messageBubble.classList.add('bg-gray-800/70', 'border-gray-700/50', 'text-gray-300');
+      }
+      messageBubble.textContent = content;
+      
+      messageDiv.appendChild(messageBubble);
+      chatArea.appendChild(messageDiv);
+      chatArea.scrollTop = chatArea.scrollHeight;
+    }
+
+    function sendMessage() {
+      const message = chatInput.value.trim();
+      if (message) {
+        addMessage(message, true);
+        chatInput.value = '';
+        setTimeout(() => {
+          addMessage("I'll analyze that and get back to you shortly.", false);
+        }, 1000);
+      }
+    }
+
+    sendButton.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+  </script>
+</body>
+</html>

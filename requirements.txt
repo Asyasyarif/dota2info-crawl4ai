@@ -9,3 +9,9 @@ python-dotenv
 psycopg2-binary
 langgraph
 langchain-postgres
+jq
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+httpx

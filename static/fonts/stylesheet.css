@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'HypatiaSansPro';
+    src: url('HypatiaSansPro-Bold.eot');
+    src: local('Hypatia Sans Pro Bold'), local('HypatiaSansPro-Bold'),
+        url('HypatiaSansPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('HypatiaSansPro-Bold.woff2') format('woff2'),
+        url('HypatiaSansPro-Bold.woff') format('woff'),
+        url('HypatiaSansPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HypatiaSansPro';
+    src: url('HypatiaSansPro-Black.eot');
+    src: local('Hypatia Sans Pro Black'), local('HypatiaSansPro-Black'),
+        url('HypatiaSansPro-Black.eot?#iefix') format('embedded-opentype'),
+        url('HypatiaSansPro-Black.woff2') format('woff2'),
+        url('HypatiaSansPro-Black.woff') format('woff'),
+        url('HypatiaSansPro-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HypatiaSansPro';
+    src: url('HypatiaSansPro-ExtraLight.eot');
+    src: local('Hypatia Sans Pro ExtraLight'), local('HypatiaSansPro-ExtraLight'),
+        url('HypatiaSansPro-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('HypatiaSansPro-ExtraLight.woff2') format('woff2'),
+        url('HypatiaSansPro-ExtraLight.woff') format('woff'),
+        url('HypatiaSansPro-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HypatiaSansPro';
+    src: url('HypatiaSansPro-Light.eot');
+    src: local('Hypatia Sans Pro Light'), local('HypatiaSansPro-Light'),
+        url('HypatiaSansPro-Light.eot?#iefix') format('embedded-opentype'),
+        url('HypatiaSansPro-Light.woff2') format('woff2'),
+        url('HypatiaSansPro-Light.woff') format('woff'),
+        url('HypatiaSansPro-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HypatiaSansPro';
+    src: url('HypatiaSansPro-Regular.eot');
+    src: local('Hypatia Sans Pro'), local('HypatiaSansPro-Regular'),
+        url('HypatiaSansPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('HypatiaSansPro-Regular.woff2') format('woff2'),
+        url('HypatiaSansPro-Regular.woff') format('woff'),
+        url('HypatiaSansPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HypatiaSansPro';
+    src: url('HypatiaSansPro-Semibold.eot');
+    src: local('Hypatia Sans Pro Semibold'), local('HypatiaSansPro-Semibold'),
+        url('HypatiaSansPro-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('HypatiaSansPro-Semibold.woff2') format('woff2'),
+        url('HypatiaSansPro-Semibold.woff') format('woff'),
+        url('HypatiaSansPro-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
