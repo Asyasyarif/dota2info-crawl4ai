@@ -15,3 +15,11 @@ uvicorn
 pydantic
 pydantic-settings
 httpx
+google-generativeai
+google-genai
+langchain-google-genai
+alembic
+sqlalchemy
+uuid
+steamsignin
+python-jose

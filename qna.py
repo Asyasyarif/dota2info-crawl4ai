@@ -1,11 +1,15 @@
 # qna_chatbot.py
 import os
 from dotenv import load_dotenv
+import json
+import time
+import concurrent.futures
+from typing import Dict
 from pathlib import Path
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_postgres import PGVector
 from langchain_community.tools import TavilySearchResults
-from langgraph.graph import StateGraph
+from langgraph.graph import StateGraph, START, END
 from typing import List
 from typing_extensions import TypedDict
 from app.routes.matches import parse_match
@@ -26,59 +30,135 @@ db = PGVector(
     use_jsonb=True
 )
 
-class GraphState(TypedDict):
-    """
-    Merepresentasikan state dari graph.
-    """
+class AnalysisState(TypedDict):
     question: str
-    match_id: str
-    response: str
-    match: str
-    web: list
-    context: str
+    match_data: Dict
+    results: Dict[str, Dict]
+    selected_nodes: List[str]
     error: str | None
 
-# Definisikan node untuk LangGraph
-def receive_input(state):
-    return {"question": state.get("question", ""), "match_id": state.get("match_id", None)}
+def analyze_hero_composition(state: AnalysisState) -> dict:
+    print("Memproses analisis komposisi hero...")
+    hero_composition = {
+        "hero_composition": {
+            "radiant": ["Axe", "Lina", "Crystal Maiden", "Juggernaut", "Shadow Shaman"],
+            "dire": ["Tidehunter", "Invoker", "Lion", "Phantom Assassin", "Witch Doctor"]
+        }
+    }
+    return hero_composition
 
-def ask_match_id(state):
-    if "match_id" not in state or not state["match_id"]:
-        return {"match_id": input("Masukkan match_id: ")}
-    return {}
+def analyze_item_build(state: AnalysisState) -> dict:
+    print("Memproses analisis item build...")
+    time.sleep(1)
+    return {"item_build": "Hasil analisis item build"}
 
-def perform_web_search(state):
+def analyze_stats(state: AnalysisState) -> dict:
+    print("Memproses analisis statistik...")
+    stats = {
+        "stats": {
+            "radiant": {
+                "gold": 10000,
+                "kills": 10,
+                "deaths": 5,
+                "assists": 3
+            },
+            "dire": {
+                "gold": 8000,
+                "kills": 8,
+                "deaths": 6,
+                "assists": 2
+            }
+        }
+    }
+    return stats
+
+def analyze_timeline(state: AnalysisState) -> dict:
+    print("Memproses analisis timeline...")
+    time.sleep(1)
+    return {"timeline": "Hasil analisis timeline"}
+
+def analyze_key_events(state: AnalysisState) -> dict:
+    print("Memproses analisis peristiwa kunci...")
+    time.sleep(1)
+    return {"key_events": "Hasil analisis peristiwa kunci"}
+
+def auto_select_nodes(state: AnalysisState) -> dict:
+    print("Memproses seleksi analisis otomatis...")
     question = state["question"]
-    sapaan = ["hai", "halo", "hey", "hello", "pagi", "siang", "sore", "malam"]
-    if question in sapaan:
-        return {"web": []}
-    result = web_search.invoke(question)
-    return {"web": result}
-
-async def perform_api_access(state):
-    match_id = state.get("match_id", "")
+    prompt = f"""
+    Kamu adalah asisten analisis Dota 2. Berdasarkan query berikut: "{question}",
+    tentukan node analisis apa saja yang harus dijalankan dari daftar berikut:
+    ["hero_composition", "item_build", "stats", "timeline", "key_events"].
+    Jawab hanya dalam format JSON list. Contoh: ["hero_composition", "stats"]
+    """
     try:
-        print("DEBUG: Melakukan akses API")
-        api_response = await parse_match(match_id)
-        if not api_response:
-            print("DEBUG: API Response kosong atau None!")
+        client = ChatOpenAI(openai_api_key=os.getenv("DEEPSEEK_API_KEY"), 
+                           openai_api_base='https://api.deepseek.com', 
+                           model="deepseek-chat", 
+                           max_tokens=100, 
+                           temperature=0)
+        response = client.invoke(prompt)
+        cleaned_content = response.content.strip()
+        if cleaned_content.startswith("```") and cleaned_content.endswith("```"):
+            cleaned_content = cleaned_content[3:-3].strip()
+        selected_nodes = json.loads(cleaned_content)
+        allowed = {"hero_composition", "item_build", "stats", "timeline", "key_events"}
 
-        return {"match": api_response}
+        if not isinstance(selected_nodes, list):
+            return {"error": "Format jawaban tidak valid", "selected_nodes": []}
 
+        if not all(node in allowed for node in selected_nodes):
+            return {"error": "Format jawaban tidak valid", "selected_nodes": []}
+
+        return {"selected_nodes": selected_nodes}
     except Exception as e:
-        print("DEBUG: Error saat akses API:", str(e))
-        return {**state, "match": None, "error": str(e)}
+        print(f"Error in auto_select_nodes: {str(e)}")
+        return {"error": str(e), "selected_nodes": ["hero_composition", "stats"]}
+
+def run_parallel_analysis(state: AnalysisState) -> dict:
+    """
+    Node ini akan mengambil nilai match_data dan daftar selected_nodes dari state,
+    lalu menjalankan fungsi-fungsi analisis yang terpilih secara paralel.
+    Hasil masing-masing node akan dikumpulkan ke dalam state["results"].
+    """
+
+    nodes = {
+        "hero_composition": analyze_hero_composition,
+        "item_build": analyze_item_build,
+        "stats": analyze_stats,
+        "timeline": analyze_timeline,
+        "key_events": analyze_key_events,
+    }
+    print("Running parallel analysis...")
+    print(state["selected_nodes"])
+    selected = state["selected_nodes"]
+    results = {}
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        future_to_node = {}
+        for key in selected:
+            if key in nodes:
+                future = executor.submit(nodes[key], state)
+                future_to_node[future] = key
+            else:
+                print(f"Warning: Node '{key}' tidak ditemukan.")
+        for future in concurrent.futures.as_completed(future_to_node):
+            node_name = future_to_node[future]
+            try:
+                res = future.result()
+                results[node_name] = res
+                print(f"Node '{node_name}' selesai dengan hasil: {res}")
+            except Exception as exc:
+                print(f"Node '{node_name}' menghasilkan exception: {exc}")
+    return {"results": results}
+
+def receive_input(state):
+    return {"question": state.get("question", "")}
 
 def retrieve_context(state):
-
     question = state["question"]
-    web_result = state.get("web", "")
-    match_id = state.get("match_id", "")
-    api_data = state.get("match", "")
+    match_data = state.get("match_data")
 
     try:
-        api_context = api_data
-
         embeddings = OpenAIEmbeddings(model="text-embedding-ada-002")
         query_embedding = embeddings.embed_query(question)
 
@@ -92,30 +172,23 @@ def retrieve_context(state):
             for doc in docs
         ])
 
-
         final_context = ""
-        if api_context:
-            final_context += f"\nMatch Information:\n{api_context}"
+
         if semantic_context:
             final_context += f"\nAdditional Semantic Context:\n{semantic_context}"
-        if web_result:
-            final_context += f"\nWeb Search Result (Additional Context):\n{web_result}"
+        if match_data:
+            final_context += f"\nGame Match Information:\n{match_data}"
 
-        print("DEBUG: Final Context:", final_context)
-
-        return {"context": final_context, "question": question, "error": None, "web": web_result}
+        return {"context": final_context, "error": None}
     except Exception as e:
-        return {"error": str(e), "context": "", "question": question, "match_id": match_id, "web": web_result}
+        return {"error": str(e), "context": ""}
 
 async def generate_response(state):
     if state.get("error"):
-        return {"response": f"Maaf, terjadi error: {state['error']}", "error": state['error'], "web": state.get("web", "")}
+        return {"response": f"Maaf, terjadi error: {state['error']}", "error": state['error']}
 
     context = state["context"]
     question = state["question"]
-    match_id = state["match_id"]
-    web_result = state.get("web", "")
-
     try:
         system_prompt = """Anda adalah pelatih Dota 2 profesional SUPER KRITIS dengan analisis tajam dan roasting habis-habisan. Setiap kritik WAJIB disertai:
 - Alasan teknis
@@ -152,64 +225,61 @@ PENGEMBANGAN SKILL
 - Rekomendasikan hero untuk "terapi"
 
 KOMUNIKASI
-- Bahasa Indonesia super tajam
+- Bahasa Indonesia gaul dan super tajam
 - Format: Hero Name (Player Name)
 - Kritik tanpa ampun
 - Solusi 100% praktis"""
 
-        full_prompt = f"{system_prompt}\n\nContext Match ID: {match_id}\n{context}\n\nQuestion: {question}\nAnswer:"
+        full_prompt = f"{system_prompt}\n\nContext:\n{context}\n\nQuestion: {question}\nAnswer:"
 
-        client = ChatOpenAI(model="gpt-4o-mini")
+        client = ChatOpenAI(openai_api_key=os.getenv("DEEPSEEK_API_KEY"), openai_api_base='https://api.deepseek.com', model="deepseek-chat", max_tokens=4000)
         response = await client.ainvoke(full_prompt)
-        
-        return {"response": response.content, "error": None, "web": web_result}
+
+        return {"response": response.content, "error": None}
     except Exception as e:
-        return {"response": f"Maaf, terjadi error saat generate response: {str(e)}", "error": str(e), "web": web_result}
+        return {"response": f"Maaf, terjadi error saat generate response: {str(e)}", "error": str(e)}
 
 def create_graph() -> StateGraph:
-    workflow = StateGraph(GraphState)
+    workflow = StateGraph(AnalysisState)
 
-    workflow.add_node("receive_input", receive_input)
-    workflow.add_node("ask_match_id", ask_match_id)
-    # workflow.add_node("perform_web_search", perform_web_search)
-    workflow.add_node("perform_api_access", perform_api_access)
-    workflow.add_node("retrieve_context", retrieve_context)
+    workflow.add_node(receive_input)
+    workflow.add_node("auto_select_analysis", auto_select_nodes)
+    workflow.add_node("run_parallel_analysis", run_parallel_analysis)
     workflow.add_node("generate_response", generate_response)
     workflow.set_entry_point("receive_input")
 
-    workflow.add_edge("receive_input", "ask_match_id")
-    # workflow.add_edge("ask_match_id", "perform_web_search")
-    workflow.add_edge("ask_match_id", "perform_api_access")
-    workflow.add_edge("perform_api_access", "retrieve_context")
-    workflow.add_edge("retrieve_context", "generate_response")
+    workflow.add_edge(START, "receive_input")
+    workflow.add_edge("receive_input", "auto_select_analysis")
+    workflow.add_edge("auto_select_analysis", "run_parallel_analysis")
+    workflow.add_edge("run_parallel_analysis", "generate_response")
+    workflow.add_edge("generate_response", END)
 
     workflow.set_finish_point("generate_response")
 
     return workflow
 
-CURRENT_MATCH_ID = None
-
-async def run_chatbot(question: str) -> str:
-    global CURRENT_MATCH_ID
+async def run_chatbot(question: str, match_data: dict) -> str:
     try:
         workflow = create_graph()
-        state = {"question": question}
-        if CURRENT_MATCH_ID:
-            state["match_id"] = CURRENT_MATCH_ID
+        state = {
+            "question": question,
+            "match_data": match_data,
+            "results": {},
+            "selected_nodes": [],
+            "error": None
+        }
         result = await workflow.compile().ainvoke(state)
-        if "match_id" in state and state["match_id"]:
-            CURRENT_MATCH_ID = state["match_id"]
-        return result["response"]
+        return json.dumps(result)
     except Exception as e:
-        return f"Terjadi error sistem: {str(e)}"
+        return json.dumps({"error": str(e)})
 
-if __name__ == "__main__":
-    async def main():
-        while True:
-            question = input("You: ")
-            if question.lower() in ["exit", "quit"]:
-                break
-            response = await run_chatbot(question)
-            print(f"Bot: {response}")
-    
-    asyncio.run(main())
+# if __name__ == "__main__":
+#     async def main():
+#         while True:
+#             question = input("You: ")
+#             if question.lower() in ["exit", "quit"]:
+#                 break
+#             response = await run_chatbot(question)
+#             print(f"Bot: {response}")
+
+#     asyncio.run(main())

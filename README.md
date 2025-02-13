@@ -12,3 +12,7 @@ root folder run
 ```bash
 uvicorn app.main:app --reload
 ```
+
+```
+python3 -m app.main
+```
